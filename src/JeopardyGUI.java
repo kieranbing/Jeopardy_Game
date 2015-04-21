@@ -6,7 +6,7 @@
 
 /**
  *
- * @author S067232588
+ * @author Kieran Bingham & Cameron Sokalski
  */
 public class JeopardyGUI extends javax.swing.JFrame {
 
