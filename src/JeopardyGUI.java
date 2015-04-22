@@ -107,7 +107,6 @@ public class JeopardyGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("JEOPARDY!  by: Kieran & Cameron");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setPreferredSize(new java.awt.Dimension(700, 500));
         setResizable(false);
 
         mainPanel.setPreferredSize(new java.awt.Dimension(700, 500));
@@ -161,7 +160,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
 
         questionOneLabel.setFont(questionOneLabel.getFont().deriveFont(questionOneLabel.getFont().getStyle() | java.awt.Font.BOLD, questionOneLabel.getFont().getSize()+6));
         questionOneLabel.setForeground(new java.awt.Color(255, 255, 255));
-        questionOneLabel.setText("Multyplication");
+        questionOneLabel.setText("Multiplication");
 
         titleImage1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titleImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resorces/small_Logo_crop.png"))); // NOI18N
