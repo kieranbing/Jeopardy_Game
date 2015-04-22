@@ -101,10 +101,11 @@ public class JeopardyGUI extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(700, 500));
         setResizable(false);
 
-        mainPanel.setPreferredSize(new java.awt.Dimension(600, 400));
+        mainPanel.setPreferredSize(new java.awt.Dimension(700, 500));
         mainPanel.setLayout(new java.awt.CardLayout());
 
         splashScreen.setBackground(new java.awt.Color(0, 0, 102));
+        splashScreen.setPreferredSize(new java.awt.Dimension(700, 500));
 
         titleImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titleImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resorces/Jeopardy!_Logo_crop.png"))); // NOI18N
@@ -124,21 +125,21 @@ public class JeopardyGUI extends javax.swing.JFrame {
             .addGroup(splashScreenLayout.createSequentialGroup()
                 .addGroup(splashScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(splashScreenLayout.createSequentialGroup()
-                        .addGap(244, 244, 244)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(splashScreenLayout.createSequentialGroup()
                         .addGap(95, 95, 95)
-                        .addComponent(titleImage, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(94, Short.MAX_VALUE))
+                        .addComponent(titleImage, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(splashScreenLayout.createSequentialGroup()
+                        .addGap(228, 228, 228)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(194, Short.MAX_VALUE))
         );
         splashScreenLayout.setVerticalGroup(
             splashScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(splashScreenLayout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addComponent(titleImage)
-                .addGap(64, 64, 64)
+                .addGap(28, 28, 28)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 107, Short.MAX_VALUE))
+                .addGap(0, 243, Short.MAX_VALUE))
         );
 
         mainPanel.add(splashScreen, "card1");
@@ -147,7 +148,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
         gamePage.setFocusTraversalPolicyProvider(true);
         gamePage.setMaximumSize(new java.awt.Dimension(121, 50));
         gamePage.setMinimumSize(new java.awt.Dimension(121, 23));
-        gamePage.setPreferredSize(new java.awt.Dimension(121, 50));
+        gamePage.setPreferredSize(new java.awt.Dimension(700, 500));
 
         questionOneLabel.setFont(questionOneLabel.getFont().deriveFont(questionOneLabel.getFont().getStyle() | java.awt.Font.BOLD, questionOneLabel.getFont().getSize()+10));
         questionOneLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -410,11 +411,15 @@ public class JeopardyGUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
