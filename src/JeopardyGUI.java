@@ -1,5 +1,7 @@
 
 import java.awt.CardLayout;
+//import java.util.Random;
+//import java.util.Scanner;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,6 +16,7 @@ import java.awt.CardLayout;
 
 //Test
 public class JeopardyGUI extends javax.swing.JFrame {
+    Multiplication multi = new Multiplication();
 
     /**
      * Creates new form JeopardyGUI
@@ -46,13 +49,13 @@ public class JeopardyGUI extends javax.swing.JFrame {
         questionOneLabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         titleImage1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        menuButton = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         questionOneLabel1 = new javax.swing.JLabel();
         questionOneLabel2 = new javax.swing.JLabel();
         questionOneLabel3 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        q1Button = new javax.swing.JButton();
+        q2Button = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
@@ -166,12 +169,12 @@ public class JeopardyGUI extends javax.swing.JFrame {
         titleImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resorces/small_Logo_crop.png"))); // NOI18N
         titleImage1.setPreferredSize(new java.awt.Dimension(103, 50));
 
-        jButton2.setFont(jButton2.getFont().deriveFont(jButton2.getFont().getStyle() | java.awt.Font.BOLD, jButton2.getFont().getSize()+3));
-        jButton2.setText("Main Menu");
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        menuButton.setFont(menuButton.getFont().deriveFont(menuButton.getFont().getStyle() | java.awt.Font.BOLD, menuButton.getFont().getSize()+3));
+        menuButton.setText("Main Menu");
+        menuButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        menuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                menuButtonActionPerformed(evt);
             }
         });
 
@@ -185,7 +188,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(titleImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(menuButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton8)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -194,7 +197,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(titleImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jButton2)
+                .addComponent(menuButton)
                 .addComponent(jButton8))
         );
 
@@ -210,15 +213,25 @@ public class JeopardyGUI extends javax.swing.JFrame {
         questionOneLabel3.setForeground(new java.awt.Color(255, 255, 255));
         questionOneLabel3.setText("Division");
 
-        jButton3.setText("$200");
-        jButton3.setMaximumSize(new java.awt.Dimension(121, 50));
-        jButton3.setMinimumSize(new java.awt.Dimension(121, 23));
-        jButton3.setPreferredSize(new java.awt.Dimension(121, 50));
+        q1Button.setText("$200");
+        q1Button.setMaximumSize(new java.awt.Dimension(121, 50));
+        q1Button.setMinimumSize(new java.awt.Dimension(121, 23));
+        q1Button.setPreferredSize(new java.awt.Dimension(121, 50));
+        q1Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                q1ButtonActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("$400");
-        jButton4.setMaximumSize(new java.awt.Dimension(121, 50));
-        jButton4.setMinimumSize(new java.awt.Dimension(121, 23));
-        jButton4.setPreferredSize(new java.awt.Dimension(121, 50));
+        q2Button.setText("$400");
+        q2Button.setMaximumSize(new java.awt.Dimension(121, 50));
+        q2Button.setMinimumSize(new java.awt.Dimension(121, 23));
+        q2Button.setPreferredSize(new java.awt.Dimension(121, 50));
+        q2Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                q2ButtonActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("$600");
         jButton5.setMaximumSize(new java.awt.Dimension(121, 50));
@@ -318,8 +331,8 @@ public class JeopardyGUI extends javax.swing.JFrame {
                 .addGap(45, 45, 45)
                 .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(questionOneLabel)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(q1Button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(q2Button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -371,9 +384,9 @@ public class JeopardyGUI extends javax.swing.JFrame {
                         .addGap(14, 14, 14)
                         .addComponent(questionOneLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(q1Button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(q2Button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(25, 25, 25)
@@ -450,10 +463,20 @@ public class JeopardyGUI extends javax.swing.JFrame {
         cl.next(mainPanel);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
         CardLayout cl = (CardLayout)(mainPanel.getLayout());
         cl.previous(mainPanel);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_menuButtonActionPerformed
+
+    private void q1ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_q1ButtonActionPerformed
+        multi.multiplyLevel1(); 
+        q1Button.setEnabled(false);
+    }//GEN-LAST:event_q1ButtonActionPerformed
+
+    private void q2ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_q2ButtonActionPerformed
+        multi.multiplyLevel2();
+        q1Button.setEnabled(false);
+    }//GEN-LAST:event_q2ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -503,7 +526,6 @@ public class JeopardyGUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
@@ -514,8 +536,6 @@ public class JeopardyGUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
@@ -524,6 +544,9 @@ public class JeopardyGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel mainPanel;
+    private javax.swing.JButton menuButton;
+    private javax.swing.JButton q1Button;
+    private javax.swing.JButton q2Button;
     private javax.swing.JLabel questionOneLabel;
     private javax.swing.JLabel questionOneLabel1;
     private javax.swing.JLabel questionOneLabel2;
