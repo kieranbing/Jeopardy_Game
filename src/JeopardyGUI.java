@@ -45,9 +45,24 @@ public class JeopardyGUI extends javax.swing.JFrame {
         splashScreen = new javax.swing.JPanel();
         titleImage = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        settingsPage = new javax.swing.JPanel();
+        toolBar1 = new javax.swing.JPanel();
+        titleImage2 = new javax.swing.JLabel();
+        menuButton1 = new javax.swing.JButton();
+        jButton30 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        displayArea = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        timerSlider = new javax.swing.JSlider();
+        sliderLabel = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         gamePage = new javax.swing.JPanel();
         questionOneLabel = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        toolBar = new javax.swing.JPanel();
         titleImage1 = new javax.swing.JLabel();
         menuButton = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
@@ -115,7 +130,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
         mainPanel.setPreferredSize(new java.awt.Dimension(700, 500));
         mainPanel.setLayout(new java.awt.CardLayout());
 
-        splashScreen.setBackground(new java.awt.Color(0, 0, 102));
+        splashScreen.setBackground(new java.awt.Color(0, 0, 153));
         splashScreen.setPreferredSize(new java.awt.Dimension(700, 500));
 
         titleImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -155,7 +170,143 @@ public class JeopardyGUI extends javax.swing.JFrame {
 
         mainPanel.add(splashScreen, "card1");
 
-        gamePage.setBackground(new java.awt.Color(0, 0, 102));
+        settingsPage.setBackground(new java.awt.Color(0, 0, 153));
+
+        titleImage2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titleImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resorces/small_Logo_crop.png"))); // NOI18N
+        titleImage2.setPreferredSize(new java.awt.Dimension(103, 50));
+
+        menuButton1.setFont(menuButton1.getFont().deriveFont(menuButton1.getFont().getStyle() | java.awt.Font.BOLD, menuButton1.getFont().getSize()+3));
+        menuButton1.setText("Main Menu");
+        menuButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        menuButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton30.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton30.setText("Credits");
+
+        javax.swing.GroupLayout toolBar1Layout = new javax.swing.GroupLayout(toolBar1);
+        toolBar1.setLayout(toolBar1Layout);
+        toolBar1Layout.setHorizontalGroup(
+            toolBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(toolBar1Layout.createSequentialGroup()
+                .addComponent(titleImage2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(menuButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton30)
+                .addContainerGap(399, Short.MAX_VALUE))
+        );
+        toolBar1Layout.setVerticalGroup(
+            toolBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(titleImage2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(toolBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(menuButton1)
+                .addComponent(jButton30))
+        );
+
+        displayArea.setColumns(20);
+        displayArea.setRows(5);
+        jScrollPane1.setViewportView(displayArea);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Add team/player: ");
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton2.setText("Add");
+
+        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextField1.setText("                      ");
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("<html><u>Settings");
+
+        jRadioButton1.setBackground(new java.awt.Color(0, 0, 153));
+        jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton1.setText("Double Jeopardy");
+
+        timerSlider.setBackground(new java.awt.Color(0, 0, 153));
+        timerSlider.setMajorTickSpacing(5);
+        timerSlider.setMaximum(120);
+        timerSlider.setMinimum(10);
+        timerSlider.setPaintTicks(true);
+        timerSlider.setSnapToTicks(true);
+        timerSlider.setValue(30);
+        timerSlider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                timerSliderStateChanged(evt);
+            }
+        });
+
+        sliderLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        sliderLabel.setForeground(new java.awt.Color(255, 255, 255));
+        sliderLabel.setText("30 seconds");
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("<html><u>Timer length: ");
+
+        javax.swing.GroupLayout settingsPageLayout = new javax.swing.GroupLayout(settingsPage);
+        settingsPage.setLayout(settingsPageLayout);
+        settingsPageLayout.setHorizontalGroup(
+            settingsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(toolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, settingsPageLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(settingsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioButton1)
+                    .addGroup(settingsPageLayout.createSequentialGroup()
+                        .addComponent(timerSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(sliderLabel))
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(settingsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(settingsPageLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2)))
+                .addContainerGap())
+        );
+        settingsPageLayout.setVerticalGroup(
+            settingsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(settingsPageLayout.createSequentialGroup()
+                .addComponent(toolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(settingsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(settingsPageLayout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jRadioButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addGroup(settingsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(timerSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sliderLabel))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(settingsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addGroup(settingsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton2)))
+                .addGap(0, 175, Short.MAX_VALUE))
+        );
+
+        mainPanel.add(settingsPage, "card4");
+
+        gamePage.setBackground(new java.awt.Color(0, 0, 153));
         gamePage.setFocusTraversalPolicyProvider(true);
         gamePage.setMaximumSize(new java.awt.Dimension(121, 50));
         gamePage.setMinimumSize(new java.awt.Dimension(121, 23));
@@ -181,11 +332,11 @@ public class JeopardyGUI extends javax.swing.JFrame {
         jButton8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton8.setText("Credits");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout toolBarLayout = new javax.swing.GroupLayout(toolBar);
+        toolBar.setLayout(toolBarLayout);
+        toolBarLayout.setHorizontalGroup(
+            toolBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(toolBarLayout.createSequentialGroup()
                 .addComponent(titleImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(menuButton)
@@ -193,10 +344,10 @@ public class JeopardyGUI extends javax.swing.JFrame {
                 .addComponent(jButton8)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        toolBarLayout.setVerticalGroup(
+            toolBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(titleImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+            .addGroup(toolBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(menuButton)
                 .addComponent(jButton8))
         );
@@ -373,12 +524,12 @@ public class JeopardyGUI extends javax.swing.JFrame {
                         .addGap(15, 15, 15)
                         .addComponent(questionOneLabel3)))
                 .addGap(113, 113, 113))
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(toolBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         gamePageLayout.setVerticalGroup(
             gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(gamePageLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(toolBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(gamePageLayout.createSequentialGroup()
                         .addGap(14, 14, 14)
@@ -478,6 +629,14 @@ public class JeopardyGUI extends javax.swing.JFrame {
         q1Button.setEnabled(false);
     }//GEN-LAST:event_q2ButtonActionPerformed
 
+    private void menuButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuButton1ActionPerformed
+
+    private void timerSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_timerSliderStateChanged
+        sliderLabel.setText(String.valueOf(timerSlider.getValue()) + " seconds");
+    }//GEN-LAST:event_timerSliderStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -514,6 +673,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea displayArea;
     private javax.swing.JPanel gamePage;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
@@ -526,6 +686,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
@@ -536,23 +697,36 @@ public class JeopardyGUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
+    private javax.swing.JButton jButton30;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JButton menuButton;
+    private javax.swing.JButton menuButton1;
     private javax.swing.JButton q1Button;
     private javax.swing.JButton q2Button;
     private javax.swing.JLabel questionOneLabel;
     private javax.swing.JLabel questionOneLabel1;
     private javax.swing.JLabel questionOneLabel2;
     private javax.swing.JLabel questionOneLabel3;
+    private javax.swing.JPanel settingsPage;
+    private javax.swing.JLabel sliderLabel;
     private javax.swing.JPanel splashScreen;
+    private javax.swing.JSlider timerSlider;
     private javax.swing.JLabel titleImage;
     private javax.swing.JLabel titleImage1;
+    private javax.swing.JLabel titleImage2;
+    private javax.swing.JPanel toolBar;
+    private javax.swing.JPanel toolBar1;
     // End of variables declaration//GEN-END:variables
 }
