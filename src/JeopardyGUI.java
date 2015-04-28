@@ -80,39 +80,39 @@ public class JeopardyGUI extends javax.swing.JFrame {
         questionOneLabel1 = new javax.swing.JLabel();
         questionOneLabel2 = new javax.swing.JLabel();
         questionOneLabel3 = new javax.swing.JLabel();
-        q1Button = new javax.swing.JButton();
-        q2Button = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton25 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
-        jButton27 = new javax.swing.JButton();
-        jButton28 = new javax.swing.JButton();
-        jButton29 = new javax.swing.JButton();
+        multi200 = new javax.swing.JButton();
+        multi400 = new javax.swing.JButton();
+        multi600 = new javax.swing.JButton();
+        multi800 = new javax.swing.JButton();
+        multi1000 = new javax.swing.JButton();
+        add200 = new javax.swing.JButton();
+        add400 = new javax.swing.JButton();
+        add600 = new javax.swing.JButton();
+        add800 = new javax.swing.JButton();
+        add1000 = new javax.swing.JButton();
+        sub200 = new javax.swing.JButton();
+        sub400 = new javax.swing.JButton();
+        sub600 = new javax.swing.JButton();
+        sub800 = new javax.swing.JButton();
+        sub1000 = new javax.swing.JButton();
+        div400 = new javax.swing.JButton();
+        div600 = new javax.swing.JButton();
+        div800 = new javax.swing.JButton();
+        div1000 = new javax.swing.JButton();
+        div200 = new javax.swing.JButton();
         scoreSeperator = new javax.swing.JSeparator();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        teamOnePanel = new javax.swing.JPanel();
+        teamOneLabel = new javax.swing.JLabel();
+        teamOneScore = new javax.swing.JLabel();
+        teamTwoPanel = new javax.swing.JPanel();
+        teamTwoLabel = new javax.swing.JLabel();
+        teamTwoScore = new javax.swing.JLabel();
+        teamThreePanel = new javax.swing.JPanel();
+        teamThreeLabel = new javax.swing.JLabel();
+        teamThreeScore = new javax.swing.JLabel();
+        teamFourPanel = new javax.swing.JPanel();
+        teamFourLabel = new javax.swing.JLabel();
+        teamFourScore = new javax.swing.JLabel();
 
         jButton19.setText("$200");
         jButton19.setMaximumSize(new java.awt.Dimension(121, 50));
@@ -263,7 +263,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
         doubleRadio.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         doubleRadio.setForeground(new java.awt.Color(255, 255, 255));
         doubleRadio.setText("Double Jeopardy");
-        doubleRadio.setToolTipText("");
+        doubleRadio.setToolTipText("Adds a second round with double points");
 
         timerSlider.setBackground(new java.awt.Color(0, 0, 153));
         timerSlider.setMajorTickSpacing(5);
@@ -450,253 +450,253 @@ public class JeopardyGUI extends javax.swing.JFrame {
         questionOneLabel3.setForeground(new java.awt.Color(255, 255, 255));
         questionOneLabel3.setText("Division");
 
-        q1Button.setText("$200");
-        q1Button.setMaximumSize(new java.awt.Dimension(121, 50));
-        q1Button.setMinimumSize(new java.awt.Dimension(121, 23));
-        q1Button.setPreferredSize(new java.awt.Dimension(121, 50));
-        q1Button.addActionListener(new java.awt.event.ActionListener() {
+        multi200.setText("$200");
+        multi200.setMaximumSize(new java.awt.Dimension(121, 50));
+        multi200.setMinimumSize(new java.awt.Dimension(121, 23));
+        multi200.setPreferredSize(new java.awt.Dimension(121, 50));
+        multi200.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                q1ButtonActionPerformed(evt);
+                multi200ActionPerformed(evt);
             }
         });
 
-        q2Button.setText("$400");
-        q2Button.setMaximumSize(new java.awt.Dimension(121, 50));
-        q2Button.setMinimumSize(new java.awt.Dimension(121, 23));
-        q2Button.setPreferredSize(new java.awt.Dimension(121, 50));
-        q2Button.addActionListener(new java.awt.event.ActionListener() {
+        multi400.setText("$400");
+        multi400.setMaximumSize(new java.awt.Dimension(121, 50));
+        multi400.setMinimumSize(new java.awt.Dimension(121, 23));
+        multi400.setPreferredSize(new java.awt.Dimension(121, 50));
+        multi400.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                q2ButtonActionPerformed(evt);
+                multi400ActionPerformed(evt);
             }
         });
 
-        jButton5.setText("$600");
-        jButton5.setMaximumSize(new java.awt.Dimension(121, 50));
-        jButton5.setMinimumSize(new java.awt.Dimension(121, 23));
-        jButton5.setPreferredSize(new java.awt.Dimension(121, 50));
+        multi600.setText("$600");
+        multi600.setMaximumSize(new java.awt.Dimension(121, 50));
+        multi600.setMinimumSize(new java.awt.Dimension(121, 23));
+        multi600.setPreferredSize(new java.awt.Dimension(121, 50));
 
-        jButton6.setText("$800");
-        jButton6.setMaximumSize(new java.awt.Dimension(121, 50));
-        jButton6.setMinimumSize(new java.awt.Dimension(121, 23));
-        jButton6.setPreferredSize(new java.awt.Dimension(121, 50));
+        multi800.setText("$800");
+        multi800.setMaximumSize(new java.awt.Dimension(121, 50));
+        multi800.setMinimumSize(new java.awt.Dimension(121, 23));
+        multi800.setPreferredSize(new java.awt.Dimension(121, 50));
 
-        jButton7.setText("$1000");
-        jButton7.setMaximumSize(new java.awt.Dimension(121, 50));
-        jButton7.setMinimumSize(new java.awt.Dimension(121, 23));
-        jButton7.setPreferredSize(new java.awt.Dimension(121, 50));
+        multi1000.setText("$1000");
+        multi1000.setMaximumSize(new java.awt.Dimension(121, 50));
+        multi1000.setMinimumSize(new java.awt.Dimension(121, 23));
+        multi1000.setPreferredSize(new java.awt.Dimension(121, 50));
 
-        jButton9.setText("$200");
-        jButton9.setMaximumSize(new java.awt.Dimension(121, 50));
-        jButton9.setMinimumSize(new java.awt.Dimension(121, 23));
-        jButton9.setPreferredSize(new java.awt.Dimension(121, 50));
+        add200.setText("$200");
+        add200.setMaximumSize(new java.awt.Dimension(121, 50));
+        add200.setMinimumSize(new java.awt.Dimension(121, 23));
+        add200.setPreferredSize(new java.awt.Dimension(121, 50));
 
-        jButton10.setText("$400");
-        jButton10.setMaximumSize(new java.awt.Dimension(121, 50));
-        jButton10.setMinimumSize(new java.awt.Dimension(121, 23));
-        jButton10.setPreferredSize(new java.awt.Dimension(121, 50));
+        add400.setText("$400");
+        add400.setMaximumSize(new java.awt.Dimension(121, 50));
+        add400.setMinimumSize(new java.awt.Dimension(121, 23));
+        add400.setPreferredSize(new java.awt.Dimension(121, 50));
 
-        jButton11.setText("$600");
-        jButton11.setMaximumSize(new java.awt.Dimension(121, 50));
-        jButton11.setMinimumSize(new java.awt.Dimension(121, 23));
-        jButton11.setPreferredSize(new java.awt.Dimension(121, 50));
+        add600.setText("$600");
+        add600.setMaximumSize(new java.awt.Dimension(121, 50));
+        add600.setMinimumSize(new java.awt.Dimension(121, 23));
+        add600.setPreferredSize(new java.awt.Dimension(121, 50));
 
-        jButton12.setText("$800");
-        jButton12.setMaximumSize(new java.awt.Dimension(121, 50));
-        jButton12.setMinimumSize(new java.awt.Dimension(121, 23));
-        jButton12.setPreferredSize(new java.awt.Dimension(121, 50));
+        add800.setText("$800");
+        add800.setMaximumSize(new java.awt.Dimension(121, 50));
+        add800.setMinimumSize(new java.awt.Dimension(121, 23));
+        add800.setPreferredSize(new java.awt.Dimension(121, 50));
 
-        jButton13.setText("$1000");
-        jButton13.setMaximumSize(new java.awt.Dimension(121, 50));
-        jButton13.setMinimumSize(new java.awt.Dimension(121, 23));
-        jButton13.setPreferredSize(new java.awt.Dimension(121, 50));
+        add1000.setText("$1000");
+        add1000.setMaximumSize(new java.awt.Dimension(121, 50));
+        add1000.setMinimumSize(new java.awt.Dimension(121, 23));
+        add1000.setPreferredSize(new java.awt.Dimension(121, 50));
 
-        jButton14.setText("$200");
-        jButton14.setMaximumSize(new java.awt.Dimension(121, 50));
-        jButton14.setMinimumSize(new java.awt.Dimension(121, 23));
-        jButton14.setPreferredSize(new java.awt.Dimension(121, 50));
+        sub200.setText("$200");
+        sub200.setMaximumSize(new java.awt.Dimension(121, 50));
+        sub200.setMinimumSize(new java.awt.Dimension(121, 23));
+        sub200.setPreferredSize(new java.awt.Dimension(121, 50));
 
-        jButton15.setText("$400");
-        jButton15.setMaximumSize(new java.awt.Dimension(121, 50));
-        jButton15.setMinimumSize(new java.awt.Dimension(121, 23));
-        jButton15.setPreferredSize(new java.awt.Dimension(121, 50));
+        sub400.setText("$400");
+        sub400.setMaximumSize(new java.awt.Dimension(121, 50));
+        sub400.setMinimumSize(new java.awt.Dimension(121, 23));
+        sub400.setPreferredSize(new java.awt.Dimension(121, 50));
 
-        jButton16.setText("$600");
-        jButton16.setMaximumSize(new java.awt.Dimension(121, 50));
-        jButton16.setMinimumSize(new java.awt.Dimension(121, 23));
-        jButton16.setPreferredSize(new java.awt.Dimension(121, 50));
+        sub600.setText("$600");
+        sub600.setMaximumSize(new java.awt.Dimension(121, 50));
+        sub600.setMinimumSize(new java.awt.Dimension(121, 23));
+        sub600.setPreferredSize(new java.awt.Dimension(121, 50));
 
-        jButton17.setText("$800");
-        jButton17.setMaximumSize(new java.awt.Dimension(121, 50));
-        jButton17.setMinimumSize(new java.awt.Dimension(121, 23));
-        jButton17.setPreferredSize(new java.awt.Dimension(121, 50));
+        sub800.setText("$800");
+        sub800.setMaximumSize(new java.awt.Dimension(121, 50));
+        sub800.setMinimumSize(new java.awt.Dimension(121, 23));
+        sub800.setPreferredSize(new java.awt.Dimension(121, 50));
 
-        jButton18.setText("$1000");
-        jButton18.setMaximumSize(new java.awt.Dimension(121, 50));
-        jButton18.setMinimumSize(new java.awt.Dimension(121, 23));
-        jButton18.setPreferredSize(new java.awt.Dimension(121, 50));
+        sub1000.setText("$1000");
+        sub1000.setMaximumSize(new java.awt.Dimension(121, 50));
+        sub1000.setMinimumSize(new java.awt.Dimension(121, 23));
+        sub1000.setPreferredSize(new java.awt.Dimension(121, 50));
 
-        jButton25.setText("$400");
-        jButton25.setMaximumSize(new java.awt.Dimension(121, 50));
-        jButton25.setMinimumSize(new java.awt.Dimension(121, 23));
-        jButton25.setPreferredSize(new java.awt.Dimension(121, 50));
+        div400.setText("$400");
+        div400.setMaximumSize(new java.awt.Dimension(121, 50));
+        div400.setMinimumSize(new java.awt.Dimension(121, 23));
+        div400.setPreferredSize(new java.awt.Dimension(121, 50));
 
-        jButton26.setText("$600");
-        jButton26.setMaximumSize(new java.awt.Dimension(121, 50));
-        jButton26.setMinimumSize(new java.awt.Dimension(121, 23));
-        jButton26.setPreferredSize(new java.awt.Dimension(121, 50));
+        div600.setText("$600");
+        div600.setMaximumSize(new java.awt.Dimension(121, 50));
+        div600.setMinimumSize(new java.awt.Dimension(121, 23));
+        div600.setPreferredSize(new java.awt.Dimension(121, 50));
 
-        jButton27.setText("$800");
-        jButton27.setMaximumSize(new java.awt.Dimension(121, 50));
-        jButton27.setMinimumSize(new java.awt.Dimension(121, 23));
-        jButton27.setPreferredSize(new java.awt.Dimension(121, 50));
+        div800.setText("$800");
+        div800.setMaximumSize(new java.awt.Dimension(121, 50));
+        div800.setMinimumSize(new java.awt.Dimension(121, 23));
+        div800.setPreferredSize(new java.awt.Dimension(121, 50));
 
-        jButton28.setText("$1000");
-        jButton28.setMaximumSize(new java.awt.Dimension(121, 50));
-        jButton28.setMinimumSize(new java.awt.Dimension(121, 23));
-        jButton28.setPreferredSize(new java.awt.Dimension(121, 50));
+        div1000.setText("$1000");
+        div1000.setMaximumSize(new java.awt.Dimension(121, 50));
+        div1000.setMinimumSize(new java.awt.Dimension(121, 23));
+        div1000.setPreferredSize(new java.awt.Dimension(121, 50));
 
-        jButton29.setText("$200");
-        jButton29.setMaximumSize(new java.awt.Dimension(121, 50));
-        jButton29.setMinimumSize(new java.awt.Dimension(121, 23));
-        jButton29.setPreferredSize(new java.awt.Dimension(121, 50));
+        div200.setText("$200");
+        div200.setMaximumSize(new java.awt.Dimension(121, 50));
+        div200.setMinimumSize(new java.awt.Dimension(121, 23));
+        div200.setPreferredSize(new java.awt.Dimension(121, 50));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 153));
-        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        jPanel1.setForeground(new java.awt.Color(0, 0, 153));
-        jPanel1.setMaximumSize(new java.awt.Dimension(143, 14));
-        jPanel1.setMinimumSize(new java.awt.Dimension(143, 14));
+        teamOnePanel.setBackground(new java.awt.Color(0, 0, 153));
+        teamOnePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        teamOnePanel.setForeground(new java.awt.Color(0, 0, 153));
+        teamOnePanel.setMaximumSize(new java.awt.Dimension(143, 14));
+        teamOnePanel.setMinimumSize(new java.awt.Dimension(143, 14));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Name of team 1");
+        teamOneLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        teamOneLabel.setForeground(new java.awt.Color(255, 255, 255));
+        teamOneLabel.setText("Name of team 1");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("$10000");
+        teamOneScore.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        teamOneScore.setForeground(new java.awt.Color(255, 255, 255));
+        teamOneScore.setText("$10000");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel2)
+        javax.swing.GroupLayout teamOnePanelLayout = new javax.swing.GroupLayout(teamOnePanel);
+        teamOnePanel.setLayout(teamOnePanelLayout);
+        teamOnePanelLayout.setHorizontalGroup(
+            teamOnePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(teamOnePanelLayout.createSequentialGroup()
+                .addComponent(teamOneLabel)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(teamOnePanelLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jLabel3)
+                .addComponent(teamOneScore)
                 .addContainerGap(23, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel2)
+        teamOnePanelLayout.setVerticalGroup(
+            teamOnePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(teamOnePanelLayout.createSequentialGroup()
+                .addComponent(teamOneLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
+                .addComponent(teamOneScore)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel5.setBackground(new java.awt.Color(0, 0, 153));
-        jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        jPanel5.setForeground(new java.awt.Color(0, 0, 153));
-        jPanel5.setMaximumSize(new java.awt.Dimension(143, 14));
-        jPanel5.setMinimumSize(new java.awt.Dimension(143, 14));
+        teamTwoPanel.setBackground(new java.awt.Color(0, 0, 153));
+        teamTwoPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        teamTwoPanel.setForeground(new java.awt.Color(0, 0, 153));
+        teamTwoPanel.setMaximumSize(new java.awt.Dimension(143, 14));
+        teamTwoPanel.setMinimumSize(new java.awt.Dimension(143, 14));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Name of team 2");
+        teamTwoLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        teamTwoLabel.setForeground(new java.awt.Color(255, 255, 255));
+        teamTwoLabel.setText("Name of team 2");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("$10000");
+        teamTwoScore.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        teamTwoScore.setForeground(new java.awt.Color(255, 255, 255));
+        teamTwoScore.setText("$10000");
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel4)
+        javax.swing.GroupLayout teamTwoPanelLayout = new javax.swing.GroupLayout(teamTwoPanel);
+        teamTwoPanel.setLayout(teamTwoPanelLayout);
+        teamTwoPanelLayout.setHorizontalGroup(
+            teamTwoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(teamTwoPanelLayout.createSequentialGroup()
+                .addComponent(teamTwoLabel)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel5Layout.createSequentialGroup()
+            .addGroup(teamTwoPanelLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jLabel5)
+                .addComponent(teamTwoScore)
                 .addContainerGap(23, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel4)
+        teamTwoPanelLayout.setVerticalGroup(
+            teamTwoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(teamTwoPanelLayout.createSequentialGroup()
+                .addComponent(teamTwoLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
+                .addComponent(teamTwoScore)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel6.setBackground(new java.awt.Color(0, 0, 153));
-        jPanel6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        jPanel6.setForeground(new java.awt.Color(0, 0, 153));
-        jPanel6.setMaximumSize(new java.awt.Dimension(143, 14));
-        jPanel6.setMinimumSize(new java.awt.Dimension(143, 14));
+        teamThreePanel.setBackground(new java.awt.Color(0, 0, 153));
+        teamThreePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        teamThreePanel.setForeground(new java.awt.Color(0, 0, 153));
+        teamThreePanel.setMaximumSize(new java.awt.Dimension(143, 14));
+        teamThreePanel.setMinimumSize(new java.awt.Dimension(143, 14));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Name of team 3");
+        teamThreeLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        teamThreeLabel.setForeground(new java.awt.Color(255, 255, 255));
+        teamThreeLabel.setText("Name of team 3");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("$10000");
+        teamThreeScore.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        teamThreeScore.setForeground(new java.awt.Color(255, 255, 255));
+        teamThreeScore.setText("$10000");
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jLabel6)
+        javax.swing.GroupLayout teamThreePanelLayout = new javax.swing.GroupLayout(teamThreePanel);
+        teamThreePanel.setLayout(teamThreePanelLayout);
+        teamThreePanelLayout.setHorizontalGroup(
+            teamThreePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(teamThreePanelLayout.createSequentialGroup()
+                .addComponent(teamThreeLabel)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel6Layout.createSequentialGroup()
+            .addGroup(teamThreePanelLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jLabel7)
+                .addComponent(teamThreeScore)
                 .addContainerGap(23, Short.MAX_VALUE))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jLabel6)
+        teamThreePanelLayout.setVerticalGroup(
+            teamThreePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(teamThreePanelLayout.createSequentialGroup()
+                .addComponent(teamThreeLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel7)
+                .addComponent(teamThreeScore)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel7.setBackground(new java.awt.Color(0, 0, 153));
-        jPanel7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
-        jPanel7.setForeground(new java.awt.Color(0, 0, 153));
-        jPanel7.setMaximumSize(new java.awt.Dimension(143, 14));
-        jPanel7.setMinimumSize(new java.awt.Dimension(143, 14));
+        teamFourPanel.setBackground(new java.awt.Color(0, 0, 153));
+        teamFourPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        teamFourPanel.setForeground(new java.awt.Color(0, 0, 153));
+        teamFourPanel.setMaximumSize(new java.awt.Dimension(143, 14));
+        teamFourPanel.setMinimumSize(new java.awt.Dimension(143, 14));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Name of team 4");
+        teamFourLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        teamFourLabel.setForeground(new java.awt.Color(255, 255, 255));
+        teamFourLabel.setText("Name of team 4");
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("$10000");
+        teamFourScore.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        teamFourScore.setForeground(new java.awt.Color(255, 255, 255));
+        teamFourScore.setText("$10000");
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jLabel8)
+        javax.swing.GroupLayout teamFourPanelLayout = new javax.swing.GroupLayout(teamFourPanel);
+        teamFourPanel.setLayout(teamFourPanelLayout);
+        teamFourPanelLayout.setHorizontalGroup(
+            teamFourPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(teamFourPanelLayout.createSequentialGroup()
+                .addComponent(teamFourLabel)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel7Layout.createSequentialGroup()
+            .addGroup(teamFourPanelLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jLabel9)
+                .addComponent(teamFourScore)
                 .addContainerGap(23, Short.MAX_VALUE))
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jLabel8)
+        teamFourPanelLayout.setVerticalGroup(
+            teamFourPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(teamFourPanelLayout.createSequentialGroup()
+                .addComponent(teamFourLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel9)
+                .addComponent(teamFourScore)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -712,24 +712,24 @@ public class JeopardyGUI extends javax.swing.JFrame {
                 .addGap(46, 46, 46)
                 .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(questionOneLabel)
-                    .addComponent(q1Button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(q2Button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(multi200, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(multi400, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(multi600, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(multi1000, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(multi800, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(gamePageLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePageLayout.createSequentialGroup()
-                                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(add200, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(43, 43, 43))
                             .addGroup(gamePageLayout.createSequentialGroup()
                                 .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(add400, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(add600, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(add1000, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(add800, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(33, 33, 33))))
                     .addGroup(gamePageLayout.createSequentialGroup()
                         .addGap(55, 55, 55)
@@ -738,31 +738,31 @@ public class JeopardyGUI extends javax.swing.JFrame {
                 .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(questionOneLabel2)
                     .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(sub400, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(sub600, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(sub800, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(sub1000, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sub200, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
                 .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(div200, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(div400, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(div600, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(div800, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(div1000, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(gamePageLayout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addComponent(questionOneLabel3)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePageLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(teamOnePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(teamTwoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(teamThreePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(teamFourPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54))
         );
         gamePageLayout.setVerticalGroup(
@@ -774,63 +774,63 @@ public class JeopardyGUI extends javax.swing.JFrame {
                     .addGroup(gamePageLayout.createSequentialGroup()
                         .addComponent(questionOneLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(add200, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(add400, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(add600, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(24, 24, 24)
-                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(add800, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(add1000, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(gamePageLayout.createSequentialGroup()
                         .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(gamePageLayout.createSequentialGroup()
                                 .addGap(247, 247, 247)
                                 .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(sub800, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(div800, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(gamePageLayout.createSequentialGroup()
                                 .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(questionOneLabel2)
                                     .addComponent(questionOneLabel3))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(sub200, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(div200, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(sub400, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(div400, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(sub600, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(div600, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(18, 18, 18)
                         .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(sub1000, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(div1000, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(gamePageLayout.createSequentialGroup()
                         .addGap(4, 4, 4)
                         .addComponent(questionOneLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(q1Button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(multi200, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(q2Button, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(multi400, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(multi600, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(25, 25, 25)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(multi800, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(multi1000, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scoreSeperator, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(teamOnePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(teamTwoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(teamThreePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(teamFourPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -864,15 +864,15 @@ public class JeopardyGUI extends javax.swing.JFrame {
         cl.previous(mainPanel);
     }//GEN-LAST:event_menuButtonActionPerformed
 
-    private void q1ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_q1ButtonActionPerformed
+    private void multi200ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multi200ActionPerformed
         multi.multiplyLevel1(); 
-        q1Button.setEnabled(false);
-    }//GEN-LAST:event_q1ButtonActionPerformed
+        multi200.setEnabled(false);
+    }//GEN-LAST:event_multi200ActionPerformed
 
-    private void q2ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_q2ButtonActionPerformed
+    private void multi400ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multi400ActionPerformed
         multi.multiplyLevel2();
-        q1Button.setEnabled(false);
-    }//GEN-LAST:event_q2ButtonActionPerformed
+        multi200.setEnabled(false);
+    }//GEN-LAST:event_multi400ActionPerformed
 
     private void menuButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButton1ActionPerformed
         CardLayout cl = (CardLayout)(mainPanel.getLayout());
@@ -953,6 +953,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
         playersError.setText("");
         CardLayout cl = (CardLayout)(mainPanel.getLayout());
         cl.next(mainPanel);
+        
     }//GEN-LAST:event_goButtonActionPerformed
 
     private void nameFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameFieldKeyTyped
@@ -963,6 +964,9 @@ public class JeopardyGUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_nameFieldKeyPressed
     
+    private void gameSetup(){
+        
+    }
     /**
      * @param args the command line arguments
      */
@@ -1000,60 +1004,43 @@ public class JeopardyGUI extends javax.swing.JFrame {
 
     // <editor-fold defaultstate="collapsed" desc="Variables declaration - do not modify"> 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton add1000;
+    private javax.swing.JButton add200;
+    private javax.swing.JButton add400;
+    private javax.swing.JButton add600;
+    private javax.swing.JButton add800;
     private javax.swing.JButton addButton;
     private javax.swing.JLabel addTitle;
+    private javax.swing.JButton div1000;
+    private javax.swing.JButton div200;
+    private javax.swing.JButton div400;
+    private javax.swing.JButton div600;
+    private javax.swing.JButton div800;
     private javax.swing.JRadioButton doubleRadio;
     private javax.swing.JButton editButton;
     private javax.swing.JPanel gamePage;
     private javax.swing.JButton goButton;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton28;
-    private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JButton mainMenuButton;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JButton menuButton;
     private javax.swing.JButton menuButton1;
+    private javax.swing.JButton multi1000;
+    private javax.swing.JButton multi200;
+    private javax.swing.JButton multi400;
+    private javax.swing.JButton multi600;
+    private javax.swing.JButton multi800;
     private javax.swing.JTextField nameField;
     private javax.swing.JList playerList;
     private javax.swing.JLabel playersError;
-    private javax.swing.JButton q1Button;
-    private javax.swing.JButton q2Button;
     private javax.swing.JLabel questionOneLabel;
     private javax.swing.JLabel questionOneLabel1;
     private javax.swing.JLabel questionOneLabel2;
@@ -1064,6 +1051,23 @@ public class JeopardyGUI extends javax.swing.JFrame {
     private javax.swing.JLabel settingsTitle;
     private javax.swing.JLabel sliderLabel;
     private javax.swing.JPanel splashScreen;
+    private javax.swing.JButton sub1000;
+    private javax.swing.JButton sub200;
+    private javax.swing.JButton sub400;
+    private javax.swing.JButton sub600;
+    private javax.swing.JButton sub800;
+    private javax.swing.JLabel teamFourLabel;
+    private javax.swing.JPanel teamFourPanel;
+    private javax.swing.JLabel teamFourScore;
+    private javax.swing.JLabel teamOneLabel;
+    private javax.swing.JPanel teamOnePanel;
+    private javax.swing.JLabel teamOneScore;
+    private javax.swing.JLabel teamThreeLabel;
+    private javax.swing.JPanel teamThreePanel;
+    private javax.swing.JLabel teamThreeScore;
+    private javax.swing.JLabel teamTwoLabel;
+    private javax.swing.JPanel teamTwoPanel;
+    private javax.swing.JLabel teamTwoScore;
     private javax.swing.JSlider timerSlider;
     private javax.swing.JLabel timerTitle;
     private javax.swing.JLabel titleImage;

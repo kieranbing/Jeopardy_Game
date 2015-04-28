@@ -431,7 +431,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Double Jeopardy"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
+                <Property name="toolTipText" type="java.lang.String" value="Adds a second round with double points"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JSlider" name="timerSlider">
@@ -572,26 +572,26 @@
                       <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="questionOneLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="q1Button" min="-2" max="-2" attributes="0"/>
-                          <Component id="q2Button" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton5" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton7" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                          <Component id="multi200" min="-2" max="-2" attributes="0"/>
+                          <Component id="multi400" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="multi600" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="multi1000" min="-2" max="-2" attributes="0"/>
+                          <Component id="multi800" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jButton9" min="-2" max="-2" attributes="0"/>
+                                      <Component id="add200" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jButton10" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jButton11" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jButton13" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jButton12" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="add400" min="-2" max="-2" attributes="0"/>
+                                          <Component id="add600" min="-2" max="-2" attributes="0"/>
+                                          <Component id="add1000" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="add800" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                                   </Group>
@@ -606,20 +606,20 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="questionOneLabel2" min="-2" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                              <Component id="jButton15" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton16" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton17" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton18" min="-2" max="-2" attributes="0"/>
+                              <Component id="sub400" min="-2" max="-2" attributes="0"/>
+                              <Component id="sub600" min="-2" max="-2" attributes="0"/>
+                              <Component id="sub800" min="-2" max="-2" attributes="0"/>
+                              <Component id="sub1000" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jButton14" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="sub200" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButton29" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton25" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton26" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton27" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton28" min="-2" max="-2" attributes="0"/>
+                          <Component id="div200" min="-2" max="-2" attributes="0"/>
+                          <Component id="div400" min="-2" max="-2" attributes="0"/>
+                          <Component id="div600" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="div800" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="div1000" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                               <Component id="questionOneLabel3" min="-2" max="-2" attributes="0"/>
@@ -629,13 +629,13 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="teamOnePanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                      <Component id="teamTwoPanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
+                      <Component id="teamThreePanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Component id="jPanel7" min="-2" max="-2" attributes="0"/>
+                      <Component id="teamFourPanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -649,23 +649,23 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="questionOneLabel1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jButton9" min="-2" max="-2" attributes="0"/>
+                              <Component id="add200" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton10" min="-2" max="-2" attributes="0"/>
+                              <Component id="add400" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton11" min="-2" max="-2" attributes="0"/>
+                              <Component id="add600" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                              <Component id="jButton12" min="-2" max="-2" attributes="0"/>
+                              <Component id="add800" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton13" min="-2" max="-2" attributes="0"/>
+                              <Component id="add1000" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="247" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jButton17" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jButton27" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="sub800" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="div800" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -675,50 +675,50 @@
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jButton14" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jButton29" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="sub200" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="div200" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jButton15" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jButton25" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="sub400" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="div400" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jButton16" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jButton26" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="sub600" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="div600" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jButton18" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jButton28" min="-2" max="-2" attributes="0"/>
+                                  <Component id="sub1000" min="-2" max="-2" attributes="0"/>
+                                  <Component id="div1000" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                               <Component id="questionOneLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="q1Button" min="-2" max="-2" attributes="0"/>
+                              <Component id="multi200" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="q2Button" min="-2" max="-2" attributes="0"/>
+                              <Component id="multi400" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                              <Component id="multi600" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                              <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                              <Component id="multi800" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton7" min="-2" max="-2" attributes="0"/>
+                              <Component id="multi1000" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="scoreSeperator" min="-2" pref="4" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPanel1" max="32767" attributes="0"/>
-                          <Component id="jPanel5" max="32767" attributes="0"/>
-                          <Component id="jPanel6" max="32767" attributes="0"/>
-                          <Component id="jPanel7" max="32767" attributes="0"/>
+                          <Component id="teamOnePanel" max="32767" attributes="0"/>
+                          <Component id="teamTwoPanel" max="32767" attributes="0"/>
+                          <Component id="teamThreePanel" max="32767" attributes="0"/>
+                          <Component id="teamFourPanel" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -839,7 +839,7 @@
                 <Property name="text" type="java.lang.String" value="Division"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="q1Button">
+            <Component class="javax.swing.JButton" name="multi200">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$200"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -853,10 +853,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="q1ButtonActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="multi200ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="q2Button">
+            <Component class="javax.swing.JButton" name="multi400">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$400"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -870,10 +870,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="q2ButtonActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="multi400ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton5">
+            <Component class="javax.swing.JButton" name="multi600">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$600"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -887,7 +887,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton6">
+            <Component class="javax.swing.JButton" name="multi800">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$800"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -901,7 +901,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton7">
+            <Component class="javax.swing.JButton" name="multi1000">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$1000"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -915,7 +915,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton9">
+            <Component class="javax.swing.JButton" name="add200">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$200"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -929,7 +929,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton10">
+            <Component class="javax.swing.JButton" name="add400">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$400"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -943,7 +943,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton11">
+            <Component class="javax.swing.JButton" name="add600">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$600"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -957,7 +957,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton12">
+            <Component class="javax.swing.JButton" name="add800">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$800"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -971,7 +971,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton13">
+            <Component class="javax.swing.JButton" name="add1000">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$1000"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -985,7 +985,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton14">
+            <Component class="javax.swing.JButton" name="sub200">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$200"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -999,7 +999,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton15">
+            <Component class="javax.swing.JButton" name="sub400">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$400"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -1013,7 +1013,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton16">
+            <Component class="javax.swing.JButton" name="sub600">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$600"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -1027,7 +1027,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton17">
+            <Component class="javax.swing.JButton" name="sub800">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$800"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -1041,7 +1041,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton18">
+            <Component class="javax.swing.JButton" name="sub1000">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$1000"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -1055,7 +1055,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton25">
+            <Component class="javax.swing.JButton" name="div400">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$400"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -1069,7 +1069,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton26">
+            <Component class="javax.swing.JButton" name="div600">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$600"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -1083,7 +1083,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton27">
+            <Component class="javax.swing.JButton" name="div800">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$800"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -1097,7 +1097,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton28">
+            <Component class="javax.swing.JButton" name="div1000">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$1000"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -1111,7 +1111,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton29">
+            <Component class="javax.swing.JButton" name="div200">
               <Properties>
                 <Property name="text" type="java.lang.String" value="$200"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -1127,7 +1127,7 @@
             </Component>
             <Component class="javax.swing.JSeparator" name="scoreSeperator">
             </Component>
-            <Container class="javax.swing.JPanel" name="jPanel1">
+            <Container class="javax.swing.JPanel" name="teamOnePanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="0" red="0" type="rgb"/>
@@ -1154,12 +1154,12 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="teamOneLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          <Component id="teamOneScore" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="23" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1167,16 +1167,16 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="teamOneLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          <Component id="teamOneScore" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel2">
+                <Component class="javax.swing.JLabel" name="teamOneLabel">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -1187,7 +1187,7 @@
                     <Property name="text" type="java.lang.String" value="Name of team 1"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel3">
+                <Component class="javax.swing.JLabel" name="teamOneScore">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="24" style="1"/>
@@ -1200,7 +1200,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel5">
+            <Container class="javax.swing.JPanel" name="teamTwoPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="0" red="0" type="rgb"/>
@@ -1227,12 +1227,12 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          <Component id="teamTwoLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                          <Component id="teamTwoScore" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="23" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1240,16 +1240,16 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          <Component id="teamTwoLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                          <Component id="teamTwoScore" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel4">
+                <Component class="javax.swing.JLabel" name="teamTwoLabel">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -1260,7 +1260,7 @@
                     <Property name="text" type="java.lang.String" value="Name of team 2"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel5">
+                <Component class="javax.swing.JLabel" name="teamTwoScore">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="24" style="1"/>
@@ -1273,7 +1273,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel6">
+            <Container class="javax.swing.JPanel" name="teamThreePanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="0" red="0" type="rgb"/>
@@ -1300,12 +1300,12 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          <Component id="teamThreeLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                          <Component id="teamThreeScore" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="23" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1313,16 +1313,16 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          <Component id="teamThreeLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                          <Component id="teamThreeScore" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel6">
+                <Component class="javax.swing.JLabel" name="teamThreeLabel">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -1333,7 +1333,7 @@
                     <Property name="text" type="java.lang.String" value="Name of team 3"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel7">
+                <Component class="javax.swing.JLabel" name="teamThreeScore">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="24" style="1"/>
@@ -1346,7 +1346,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel7">
+            <Container class="javax.swing.JPanel" name="teamFourPanel">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="0" red="0" type="rgb"/>
@@ -1373,12 +1373,12 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                          <Component id="teamFourLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                          <Component id="teamFourScore" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="23" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1386,16 +1386,16 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                          <Component id="teamFourLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                          <Component id="teamFourScore" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel8">
+                <Component class="javax.swing.JLabel" name="teamFourLabel">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="14" style="0"/>
@@ -1406,7 +1406,7 @@
                     <Property name="text" type="java.lang.String" value="Name of team 4"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel9">
+                <Component class="javax.swing.JLabel" name="teamFourScore">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="24" style="1"/>
