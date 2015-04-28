@@ -900,11 +900,15 @@ public class JeopardyGUI extends javax.swing.JFrame {
             playersError.setText("Max 4 players");
         } else {
             if (!"".equals(nameField.getText())) {
-                model.addElement(nameField.getText().replaceAll("[ \\t]+", " "));
-                nameField.setText("");
-                playersError.setText("");
-                if (model.getSize() >= 4){
-                    addButton.setEnabled(false);
+                if (nameField.getText().length() > 15){
+                    playersError.setText("Max 15 characters");
+                } else {
+                    model.addElement(nameField.getText().replaceAll("[ \\t]+", " "));
+                    nameField.setText("");
+                    playersError.setText("");
+                    if (model.getSize() >= 4){
+                        addButton.setEnabled(false);
+                    }
                 }
             } else {
                 playersError.setText("You can't add a blank name");
