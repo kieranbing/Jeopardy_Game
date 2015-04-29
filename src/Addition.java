@@ -18,6 +18,7 @@ public class Addition {
         level = PlaceHolder;
     }
     
+    //Function for level one of addition category
     public boolean AdditionLevel1(){
     Random random = new Random();
     Scanner scanner = new Scanner(System.in);
