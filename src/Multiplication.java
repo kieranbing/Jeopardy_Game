@@ -18,6 +18,23 @@ public class Multiplication {
         level = input; 
     }
     
+    boolean question(){
+        Random random = new Random();
+        int chosen = Math.abs(random.nextInt(3));
+        boolean correct = false; 
+        switch (chosen){ 
+                case 1:
+                    correct = multiplyLevel1();
+                    break;
+                case 2: 
+                    correct = multiplyLevel2();
+                    break;
+                default:
+                    System.out.println("MathQ select error");
+        }
+        return correct; 
+    }
+    
     public boolean multiplyLevel1(){
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);

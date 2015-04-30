@@ -911,7 +911,8 @@ public class JeopardyGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_multi200ActionPerformed
 
     private void multi400ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multi400ActionPerformed
-        multi.multiplyLevel2();
+        boolean correct = multi.question();
+        //addPoints(correct); 
         multi200.setEnabled(false);
     }//GEN-LAST:event_multi400ActionPerformed
 
@@ -1056,6 +1057,24 @@ public class JeopardyGUI extends javax.swing.JFrame {
         multi600.setEnabled(true);
         multi800.setEnabled(true);
         multi1000.setEnabled(true);
+        
+        add200.setEnabled(true);
+        add400.setEnabled(true);
+        add600.setEnabled(true);
+        add800.setEnabled(true);
+        add1000.setEnabled(true);
+        
+        sub200.setEnabled(true);
+        sub400.setEnabled(true);
+        sub600.setEnabled(true);
+        sub800.setEnabled(true);
+        sub1000.setEnabled(true);
+        
+        div200.setEnabled(true);
+        div400.setEnabled(true);
+        div600.setEnabled(true);
+        div800.setEnabled(true);
+        div1000.setEnabled(true);
         // </editor-fold>
         
         CardLayout cl = (CardLayout)(mainPanel.getLayout());
