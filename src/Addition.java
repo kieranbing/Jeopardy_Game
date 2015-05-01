@@ -21,14 +21,14 @@ public class Addition {
     //Function for level one of addition category
     public boolean AdditionLevel1(){
     Random random = new Random();
-    Scanner scanner = new Scanner(System.in);
+    Scanner response = new Scanner(System.in);
     boolean correct = false;
     
     int number1 = Math.abs(random.nextInt(100));
     int number2 = Math.abs(random.nextInt(100));
     
     System.out.println(number1+" + "+number2+" = ");
-    int userAnswer = scanner.nextInt();
+    int userAnswer = response.nextInt();
     
     if(userAnswer == (number1+number2)){
         correct = true;
