@@ -1337,6 +1337,11 @@ public class JeopardyGUI extends javax.swing.JFrame {
                     return; 
             }
         }
+        
+        timer.countdown(); 
+        while (timer.done == false){
+            timerLabel.setText(String.valueOf(timer.interval));
+        }
     }
     
     public void enableComponents(Container container, boolean enable) {
