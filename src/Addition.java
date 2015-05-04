@@ -13,6 +13,12 @@ import java.util.Scanner;
  */
 public class Addition {
     int level;
+    String question = "";
+    int number1;
+    int number2;
+    int answer;
+    boolean correct;
+    
     
     void setLevel(int PlaceHolder){
         level = PlaceHolder;
@@ -22,19 +28,21 @@ public class Addition {
     public boolean AdditionLevel1(){
     Random random = new Random();
     Scanner response = new Scanner(System.in);
-    boolean correct = false;
+    correct = false;
     
-    int number1 = Math.abs(random.nextInt(100));
-    int number2 = Math.abs(random.nextInt(100));
+    number1 = Math.abs(random.nextInt(100));
+    number2 = Math.abs(random.nextInt(100));
     
-    System.out.println(number1+" + "+number2+" = ");
-    int userAnswer = response.nextInt();
+    question = number1+"+"+number2+"= ?";
+    answer = number1+number2;
     
-    if(userAnswer == (number1+number2)){
-        correct = true;
-    }
-    
-    System.out.println(correct);
+    //System.out.println(number1+" + "+number2+" = ");
+    //int userAnswer = response.nextInt();
+    //System.out.println(correct);
     return correct;
+    }
+
+    void question() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
