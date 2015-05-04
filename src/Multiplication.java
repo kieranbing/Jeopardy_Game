@@ -6,6 +6,7 @@
 
 import java.util.Random;
 import java.util.Scanner;
+import javax.swing.*;
 
 /**
  *
@@ -13,88 +14,98 @@ import java.util.Scanner;
  */
 public class Multiplication {
     int level; 
+    String question = "";
+    int numOne; 
+    int numTwo;
+    double answer; 
+    boolean correct;
+    int qAsked = 0; 
     
     void setLevel(int input){
         level = input; 
     }
     
-    boolean question(){
+    void question(){
         Random random = new Random();
-        int chosen = Math.abs(random.nextInt(3));
-        boolean correct = false; 
+        int chosen = Math.abs(random.nextInt(2)) + 1;
         switch (chosen){ 
                 case 1:
-                    correct = multiplyLevel1();
+                    generateMulti1();
                     break;
                 case 2: 
-                    correct = multiplyLevel2();
+                    generateMulti2();
                     break;
                 default:
                     System.out.println("MathQ select error");
         }
-        return correct; 
-    }
+        
+        System.out.println(question);
+    }   
     
-    public boolean multiplyLevel1(){
+    public void generateMulti1(){
+        qAsked = 1; 
+        question = "";
         Random random = new Random();
-        Scanner scanner = new Scanner(System.in);
-        boolean correct = false; 
+//        Scanner scanner = new Scanner(System.in);
+        correct = false;
         
-        int numOne = Math.abs(random.nextInt(10000)); 
-        int numTwo = Math.abs(random.nextInt(100));
+        numOne = Math.abs(random.nextInt(10000)); 
+        numTwo = Math.abs(random.nextInt(100));
         
-        System.out.println(numOne+" * "+numTwo+" =");
-        int userNum = scanner.nextInt();
-        
-        if (userNum == (numOne * numTwo)){
-             correct = true; 
-        }
-        System.out.println(correct);
-        return correct; 
+        question = numOne+" × "+numTwo+" = ?";
+        answer = numOne * numTwo;  
     } 
     
-    public boolean multiplyLevel2(){
+    public void generateMulti2(){
+        qAsked = 2;
+        question = ""; 
         Random random = new Random();
-        Scanner scanner = new Scanner(System.in);
-        boolean correct = false; 
-        int answer = 0;
+        int rightSide;
         
         int[] numArray = new int[Math.abs(random.nextInt(5-2))+ 2]; 
         for (int i=0;i<numArray.length;i++){
             numArray[i] = Math.abs(random.nextInt(50)); 
         }
         int blank = Math.abs(random.nextInt(numArray.length));
-        for(int i=0;i<numArray.length;i++){
-            if (i == 0){
-                answer = numArray[i]; 
-            } else {
-                answer = answer*numArray[i]; 
-            }
+        rightSide = numArray[0];
+        for (int num:numArray){
+            rightSide = rightSide*num; 
         }
         
         for(int i=0;i<numArray.length;i++){
             if (i == 0){
                 if (i == blank){
-                    System.out.print("__");
+                    question = question + "?";
                 } else {
-                    System.out.print(numArray[i]);
+                    question = question + Integer.toString(numArray[i]);
                 }
             } else if (i == blank){
-                System.out.print(" * __");
+                question = question + " × ?";
             } else {
-                System.out.print(" * "+numArray[i]);
+                question = question+" × "+Integer.toString(numArray[i]);
             }
         }
-        System.out.println(" = "+answer);
-        
-        System.out.print("Blank = ");
+        question = question +" = "+Integer.toString(rightSide);
+        answer = numArray[blank]; 
+    } 
+    
+    public boolean getAnswer(){
+        Scanner scanner = new Scanner(System.in);
         int userNum = scanner.nextInt();
-
-        if (userNum == numArray[blank]){
+        if (userNum == answer){
              correct = true; 
         }
         System.out.println(correct);
         return correct; 
-    } 
+    }
+    
+    public boolean checkAnswer(JTextField textField){
+        int userNum = Integer.valueOf(textField.getText());
+        if (userNum == answer){
+             correct = true; 
+        }
+        System.out.println(correct);
+        return correct; 
+    }
 
 }
