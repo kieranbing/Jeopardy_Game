@@ -20,10 +20,21 @@ public class Addition {
     boolean correct;
     
     
-    void setLevel(int PlaceHolder){
-        level = PlaceHolder;
+    void setLevel(int input){
+        level = input;
     }
     
+    void question() {
+        Random random = new Random();
+        int chosen = Math.abs(random.nextInt(2)) +1;
+        switch (chosen){
+            case 1:
+                AdditionLevel1();
+                break;
+            default:
+                System.out.println("Addition question selection error");
+        }
+}
     //Function for level one of addition category
     public boolean AdditionLevel1(){
     Random random = new Random();
@@ -41,8 +52,10 @@ public class Addition {
     //System.out.println(correct);
     return correct;
     }
-
+}
+/*
     void question() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
+*/
