@@ -8,7 +8,7 @@ import java.util.Random;
 
 /**
  *
- * @author Cameron Sokalski 
+ * @author Cameron Sokalski
  */
 public class Subtraction {
      int level;
