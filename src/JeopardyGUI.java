@@ -27,6 +27,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
     //Define objects
     Multiplication multi = new Multiplication();
     Addition add = new Addition();
+    Subtraction sub = new Subtraction();
     Question q = new Question();
     MyTimer timer = new MyTimer(); 
     //Create array(s)
@@ -530,6 +531,11 @@ public class JeopardyGUI extends javax.swing.JFrame {
         sub200.setMaximumSize(new java.awt.Dimension(121, 50));
         sub200.setMinimumSize(new java.awt.Dimension(121, 23));
         sub200.setPreferredSize(new java.awt.Dimension(121, 50));
+        sub200.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sub200ActionPerformed(evt);
+            }
+        });
 
         sub400.setText("$400");
         sub400.setMaximumSize(new java.awt.Dimension(121, 50));
@@ -1256,6 +1262,14 @@ public class JeopardyGUI extends javax.swing.JFrame {
         popupStart();
         add400.setEnabled(false);
     }//GEN-LAST:event_add400ActionPerformed
+
+    private void sub200ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub200ActionPerformed
+       sub.question();
+       q.syncQuestion(sub.question, sub.answer);
+       jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+       popupStart();
+       sub200.setEnabled(false);
+    }//GEN-LAST:event_sub200ActionPerformed
     
     private void gameSetup(){ 
         DefaultListModel model = (DefaultListModel) playerList.getModel();
