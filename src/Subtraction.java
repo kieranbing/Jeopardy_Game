@@ -22,6 +22,18 @@ public class Subtraction {
         level = input;
     }
     
+    void question() {
+        Random random = new Random();
+        int chosen = Math.abs(random.nextInt(2)) + 1;
+        switch (chosen) {
+            case 1:
+                SubtractionLevel1();
+                break;
+            default:
+                SubtractionLevel1();
+        }
+    }
+    
     public void SubtractionLevel1(){
         question = "";
         correct = false;
