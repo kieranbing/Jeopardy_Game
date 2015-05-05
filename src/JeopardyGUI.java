@@ -1,33 +1,21 @@
 
 import java.awt.CardLayout;
-//import java.awt.event.ActionListener;
-//import java.util.Timer;
-//import java.util.TimerTask;
 import javax.swing.DefaultListModel;
-//import  javax.swing.Timer;
-//import javax.swing.event.ListSelectionEvent;
-//import java.util.Random;
-//import java.util.Scanner;
 import java.awt.*;
-//import javax.swing.*;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 /**
  *
  * @author Kieran Bingham & Cameron Sokalski
  */
 
-//Test
 public class JeopardyGUI extends javax.swing.JFrame {
     //Define objects
     Multiplication multi = new Multiplication();
     Question q = new Question();
-    MyTimer timer = new MyTimer(); 
+    Runnable r = new Updater();
     //Create array(s)
     String[] teamNames = new String[4];
     //Define vars
@@ -35,8 +23,6 @@ public class JeopardyGUI extends javax.swing.JFrame {
     boolean doubleJeopardyToggle = false; 
     boolean done;
     int[] score = {0,0,0,0};
- 
-    
     
     /**
      * Creates new form JeopardyGUI
@@ -130,7 +116,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
         popupSubmitButton = new javax.swing.JButton();
         popupTimerPanel = new javax.swing.JPanel();
         timerLabel = new javax.swing.JLabel();
-        jProgressBar1 = new javax.swing.JProgressBar();
+        timerProgress = new javax.swing.JProgressBar();
         popupText = new javax.swing.JTextField();
         teamThreeRadio = new javax.swing.JRadioButton();
         teamFourRadio = new javax.swing.JRadioButton();
@@ -862,6 +848,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
 
         popupSubmitButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         popupSubmitButton.setText("Submit");
+        popupSubmitButton.setEnabled(false);
         popupSubmitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 popupSubmitButtonActionPerformed(evt);
@@ -874,6 +861,9 @@ public class JeopardyGUI extends javax.swing.JFrame {
         timerLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         timerLabel.setForeground(new java.awt.Color(255, 255, 255));
         timerLabel.setText("0:00");
+        timerLabel.setEnabled(false);
+
+        timerProgress.setEnabled(false);
 
         javax.swing.GroupLayout popupTimerPanelLayout = new javax.swing.GroupLayout(popupTimerPanel);
         popupTimerPanel.setLayout(popupTimerPanelLayout);
@@ -883,7 +873,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(popupTimerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(timerLabel)
-                    .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(timerProgress, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         popupTimerPanelLayout.setVerticalGroup(
@@ -892,10 +882,11 @@ public class JeopardyGUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(timerLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(timerProgress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         popupText.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        popupText.setEnabled(false);
         popupText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 popupTextActionPerformed(evt);
@@ -907,6 +898,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
         teamThreeRadio.setForeground(new java.awt.Color(255, 255, 255));
         teamThreeRadio.setText("teamThreeRadio");
         teamThreeRadio.setActionCommand("");
+        teamThreeRadio.setEnabled(false);
         teamThreeRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 teamThreeRadioActionPerformed(evt);
@@ -918,6 +910,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
         teamFourRadio.setForeground(new java.awt.Color(255, 255, 255));
         teamFourRadio.setText("teamFourRadio");
         teamFourRadio.setActionCommand("");
+        teamFourRadio.setEnabled(false);
         teamFourRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 teamFourRadioActionPerformed(evt);
@@ -929,6 +922,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
         teamOneRadio.setForeground(new java.awt.Color(255, 255, 255));
         teamOneRadio.setText("teamOneRadio");
         teamOneRadio.setActionCommand("");
+        teamOneRadio.setEnabled(false);
         teamOneRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 teamOneRadioActionPerformed(evt);
@@ -940,6 +934,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
         teamTwoRadio.setForeground(new java.awt.Color(255, 255, 255));
         teamTwoRadio.setText("teamTwoRadio");
         teamTwoRadio.setActionCommand("");
+        teamTwoRadio.setEnabled(false);
         teamTwoRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 teamTwoRadioActionPerformed(evt);
@@ -957,6 +952,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
         questionArea.setWrapStyleWord(true);
         questionArea.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         questionArea.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        questionArea.setEnabled(false);
         questionArea.setMaximumSize(new java.awt.Dimension(175, 22));
         questionArea.setMinimumSize(new java.awt.Dimension(175, 22));
         jScrollPane1.setViewportView(questionArea);
@@ -1048,7 +1044,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
                     .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
-        jLayeredPane.setLayer(mainPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane.setLayer(mainPanel, javax.swing.JLayeredPane.PALETTE_LAYER);
 
         mainPanel.getAccessibleContext().setAccessibleName("main");
         jLayeredPane.setLayer(popupFrame, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -1094,9 +1090,11 @@ public class JeopardyGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_multi200ActionPerformed
 
     private void multi400ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multi400ActionPerformed
-        multi.question();
-        //addPoints(correct); 
-        multi200.setEnabled(false);
+        multi.question(); 
+        q.syncQuestion(multi.question, multi.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        multi400.setEnabled(false);
     }//GEN-LAST:event_multi400ActionPerformed
 
     private void menuButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButton1ActionPerformed
@@ -1106,7 +1104,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
 
     private void timerSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_timerSliderStateChanged
         sliderLabel.setText(String.valueOf(timerSlider.getValue()) + " seconds");
-        timer.setSecs(timerSlider.getValue());
+        gameTimer = timerSlider.getValue();
     }//GEN-LAST:event_timerSliderStateChanged
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
@@ -1301,11 +1299,14 @@ public class JeopardyGUI extends javax.swing.JFrame {
     }
     
     void popupStart(){
+        enableComponents(popupFrame, true); 
         popupText.setEnabled(false);
         popupSubmitButton.setEnabled(false); 
         popupNameGroup.clearSelection(); 
         questionArea.setText(q.question);
-        timerLabel.setText(String.valueOf(timer.secs)); 
+        timerLabel.setText(String.valueOf(gameTimer)); 
+        timerProgress.setMaximum(gameTimer);
+        toolBar.setEnabled(false);
         
         //Start timer
         
@@ -1336,6 +1337,24 @@ public class JeopardyGUI extends javax.swing.JFrame {
                     setupError.setText("Radio assignment error");
                     return; 
             }
+        }
+        
+//        Runnable r = new Updater();
+        ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
+        service.scheduleAtFixedRate(r, 0, 1, TimeUnit.SECONDS);
+//        service.shutdown(); 
+    }
+    
+    private class Updater implements Runnable {
+        @Override
+        public void run() {
+            if (gameTimer >= 1){ 
+            timerLabel.setText(String.valueOf(gameTimer));
+            timerProgress.setValue(gameTimer);
+            gameTimer--; 
+            } else if (gameTimer == 0){
+//                cancel();
+            }   
         }
     }
     
@@ -1375,15 +1394,11 @@ public class JeopardyGUI extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JeopardyGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JeopardyGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JeopardyGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(JeopardyGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */
@@ -1415,7 +1430,6 @@ public class JeopardyGUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton30;
     private javax.swing.JButton jButton8;
     private javax.swing.JLayeredPane jLayeredPane;
-    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -1473,6 +1487,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton teamTwoRadio;
     private javax.swing.JLabel teamTwoScore;
     private javax.swing.JLabel timerLabel;
+    private javax.swing.JProgressBar timerProgress;
     private javax.swing.JSlider timerSlider;
     private javax.swing.JLabel timerTitle;
     private javax.swing.JLabel titleImage;

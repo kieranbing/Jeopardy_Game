@@ -11,8 +11,8 @@ import java.util.TimerTask;
  *
  * @author Kieran Bingham
  */
-public class MyTimer {
-    static int interval;
+public class MyTimer {  
+    int interval;
     static Timer timer;
     int secs = 30; 
     boolean done = false;
