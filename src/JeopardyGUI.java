@@ -505,6 +505,11 @@ public class JeopardyGUI extends javax.swing.JFrame {
         add400.setMaximumSize(new java.awt.Dimension(121, 50));
         add400.setMinimumSize(new java.awt.Dimension(121, 23));
         add400.setPreferredSize(new java.awt.Dimension(121, 50));
+        add400.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add400ActionPerformed(evt);
+            }
+        });
 
         add600.setText("$600");
         add600.setMaximumSize(new java.awt.Dimension(121, 50));
@@ -1243,6 +1248,14 @@ public class JeopardyGUI extends javax.swing.JFrame {
         popupStart();
         add200.setEnabled(false);
     }//GEN-LAST:event_add200ActionPerformed
+
+    private void add400ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add400ActionPerformed
+        add.question();
+        q.syncQuestion(add.question, add.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        add400.setEnabled(false);
+    }//GEN-LAST:event_add400ActionPerformed
     
     private void gameSetup(){ 
         DefaultListModel model = (DefaultListModel) playerList.getModel();
