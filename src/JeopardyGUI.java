@@ -14,6 +14,8 @@ import java.util.concurrent.TimeUnit;
 public class JeopardyGUI extends javax.swing.JFrame {
     //Define objects
     Multiplication multi = new Multiplication();
+    Addition add = new Addition();
+    Subtraction sub = new Subtraction(); 
     Question q = new Question();
     Runnable r = new Updater();
     //Create array(s)
@@ -79,12 +81,9 @@ public class JeopardyGUI extends javax.swing.JFrame {
         multi600 = new javax.swing.JButton();
         multi800 = new javax.swing.JButton();
         multi1000 = new javax.swing.JButton();
-        add200 = new javax.swing.JButton();
-        add400 = new javax.swing.JButton();
         add600 = new javax.swing.JButton();
         add800 = new javax.swing.JButton();
         add1000 = new javax.swing.JButton();
-        sub200 = new javax.swing.JButton();
         sub400 = new javax.swing.JButton();
         sub600 = new javax.swing.JButton();
         sub800 = new javax.swing.JButton();
@@ -111,6 +110,9 @@ public class JeopardyGUI extends javax.swing.JFrame {
         teamFourLabel = new javax.swing.JLabel();
         teamFourScore = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
+        add200 = new javax.swing.JButton();
+        add400 = new javax.swing.JButton();
+        sub200 = new javax.swing.JButton();
         popupFrame = new javax.swing.JInternalFrame();
         popupPanel = new javax.swing.JPanel();
         popupSubmitButton = new javax.swing.JButton();
@@ -476,16 +478,6 @@ public class JeopardyGUI extends javax.swing.JFrame {
         multi1000.setMinimumSize(new java.awt.Dimension(121, 23));
         multi1000.setPreferredSize(new java.awt.Dimension(121, 50));
 
-        add200.setText("$200");
-        add200.setMaximumSize(new java.awt.Dimension(121, 50));
-        add200.setMinimumSize(new java.awt.Dimension(121, 23));
-        add200.setPreferredSize(new java.awt.Dimension(121, 50));
-
-        add400.setText("$400");
-        add400.setMaximumSize(new java.awt.Dimension(121, 50));
-        add400.setMinimumSize(new java.awt.Dimension(121, 23));
-        add400.setPreferredSize(new java.awt.Dimension(121, 50));
-
         add600.setText("$600");
         add600.setMaximumSize(new java.awt.Dimension(121, 50));
         add600.setMinimumSize(new java.awt.Dimension(121, 23));
@@ -500,11 +492,6 @@ public class JeopardyGUI extends javax.swing.JFrame {
         add1000.setMaximumSize(new java.awt.Dimension(121, 50));
         add1000.setMinimumSize(new java.awt.Dimension(121, 23));
         add1000.setPreferredSize(new java.awt.Dimension(121, 50));
-
-        sub200.setText("$200");
-        sub200.setMaximumSize(new java.awt.Dimension(121, 50));
-        sub200.setMinimumSize(new java.awt.Dimension(121, 23));
-        sub200.setPreferredSize(new java.awt.Dimension(121, 50));
 
         sub400.setText("$400");
         sub400.setMaximumSize(new java.awt.Dimension(121, 50));
@@ -703,6 +690,36 @@ public class JeopardyGUI extends javax.swing.JFrame {
                 .addComponent(teamFourScore))
         );
 
+        add200.setText("$200");
+        add200.setMaximumSize(new java.awt.Dimension(121, 50));
+        add200.setMinimumSize(new java.awt.Dimension(121, 23));
+        add200.setPreferredSize(new java.awt.Dimension(121, 50));
+        add200.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add200ActionPerformed(evt);
+            }
+        });
+
+        add400.setText("$400");
+        add400.setMaximumSize(new java.awt.Dimension(121, 50));
+        add400.setMinimumSize(new java.awt.Dimension(121, 23));
+        add400.setPreferredSize(new java.awt.Dimension(121, 50));
+        add400.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add400ActionPerformed(evt);
+            }
+        });
+
+        sub200.setText("$200");
+        sub200.setMaximumSize(new java.awt.Dimension(121, 50));
+        sub200.setMinimumSize(new java.awt.Dimension(121, 23));
+        sub200.setPreferredSize(new java.awt.Dimension(121, 50));
+        sub200.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sub200ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout gamePageLayout = new javax.swing.GroupLayout(gamePage);
         gamePage.setLayout(gamePageLayout);
         gamePageLayout.setHorizontalGroup(
@@ -725,21 +742,18 @@ public class JeopardyGUI extends javax.swing.JFrame {
                         .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(gamePageLayout.createSequentialGroup()
                                 .addGap(40, 40, 40)
-                                .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePageLayout.createSequentialGroup()
-                                        .addComponent(add200, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(43, 43, 43))
-                                    .addGroup(gamePageLayout.createSequentialGroup()
-                                        .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(add400, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(add600, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(add1000, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(add800, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(33, 33, 33))))
+                                .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(add600, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(add1000, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(add800, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(add200, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(gamePageLayout.createSequentialGroup()
                                 .addGap(55, 55, 55)
-                                .addComponent(questionOneLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addComponent(questionOneLabel1))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gamePageLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(add400, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(43, 43, 43)
                         .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(questionOneLabel2)
                             .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -777,7 +791,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
                 .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(gamePageLayout.createSequentialGroup()
                         .addComponent(questionOneLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(11, 11, 11)
                         .addComponent(add200, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(add400, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -800,8 +814,8 @@ public class JeopardyGUI extends javax.swing.JFrame {
                                     .addComponent(questionOneLabel3))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(sub200, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(div200, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(div200, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(sub200, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(gamePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(sub400, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1071,6 +1085,8 @@ public class JeopardyGUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
     private void mainMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainMenuButtonActionPerformed
         CardLayout cl = (CardLayout)(mainPanel.getLayout());
         cl.next(mainPanel);
@@ -1227,7 +1243,31 @@ public class JeopardyGUI extends javax.swing.JFrame {
         popupText.setEnabled(true);
         popupSubmitButton.setEnabled(true); 
     }//GEN-LAST:event_teamFourRadioActionPerformed
-    
+
+    private void add200ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add200ActionPerformed
+        add.question();
+        q.syncQuestion(add.question, add.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        add200.setEnabled(false);
+    }//GEN-LAST:event_add200ActionPerformed
+
+    private void add400ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add400ActionPerformed
+        add.question();
+        q.syncQuestion(add.question, add.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        add400.setEnabled(false);
+    }//GEN-LAST:event_add400ActionPerformed
+
+    private void sub200ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub200ActionPerformed
+        sub.question();
+        q.syncQuestion(sub.question, sub.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        sub200.setEnabled(false);
+    }//GEN-LAST:event_sub200ActionPerformed
+      
     private void gameSetup(){ 
         DefaultListModel model = (DefaultListModel) playerList.getModel();
         if (model.getSize() < 2){
