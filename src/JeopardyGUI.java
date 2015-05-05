@@ -1,36 +1,21 @@
 
 import java.awt.CardLayout;
-//import java.awt.event.ActionListener;
-//import java.util.Timer;
-//import java.util.TimerTask;
 import javax.swing.DefaultListModel;
-//import  javax.swing.Timer;
-//import javax.swing.event.ListSelectionEvent;
-//import java.util.Random;
-//import java.util.Scanner;
 import java.awt.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-//import javax.swing.*;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
  * @author Kieran Bingham & Cameron Sokalski
  */
 
-//Test
 public class JeopardyGUI extends javax.swing.JFrame {
     //Define objects
     Multiplication multi = new Multiplication();
     Question q = new Question();
-//    MyTimer timer = new MyTimer(); 
+    Runnable r = new Updater();
     //Create array(s)
     String[] teamNames = new String[4];
     //Define vars
@@ -38,8 +23,6 @@ public class JeopardyGUI extends javax.swing.JFrame {
     boolean doubleJeopardyToggle = false; 
     boolean done;
     int[] score = {0,0,0,0};
- 
-    
     
     /**
      * Creates new form JeopardyGUI
@@ -1107,9 +1090,11 @@ public class JeopardyGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_multi200ActionPerformed
 
     private void multi400ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multi400ActionPerformed
-        multi.question();
-        //addPoints(correct); 
-        multi200.setEnabled(false);
+        multi.question(); 
+        q.syncQuestion(multi.question, multi.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        multi400.setEnabled(false);
     }//GEN-LAST:event_multi400ActionPerformed
 
     private void menuButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButton1ActionPerformed
@@ -1314,13 +1299,14 @@ public class JeopardyGUI extends javax.swing.JFrame {
     }
     
     void popupStart(){
-        enableComponents(popupFrame,true);
+        enableComponents(popupFrame, true); 
         popupText.setEnabled(false);
         popupSubmitButton.setEnabled(false); 
         popupNameGroup.clearSelection(); 
         questionArea.setText(q.question);
         timerLabel.setText(String.valueOf(gameTimer)); 
         timerProgress.setMaximum(gameTimer);
+        toolBar.setEnabled(false);
         
         //Start timer
         
@@ -1353,9 +1339,10 @@ public class JeopardyGUI extends javax.swing.JFrame {
             }
         }
         
-        Runnable r = new Updater();
+//        Runnable r = new Updater();
         ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
         service.scheduleAtFixedRate(r, 0, 1, TimeUnit.SECONDS);
+//        service.shutdown(); 
     }
     
     private class Updater implements Runnable {
@@ -1366,12 +1353,10 @@ public class JeopardyGUI extends javax.swing.JFrame {
             timerProgress.setValue(gameTimer);
             gameTimer--; 
             } else if (gameTimer == 0){
-                //do stuff
+//                cancel();
             }   
         }
     }
-    
-    
     
     public void enableComponents(Container container, boolean enable) {
         Component[] components = container.getComponents();
@@ -1409,15 +1394,11 @@ public class JeopardyGUI extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JeopardyGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JeopardyGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JeopardyGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(JeopardyGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */
