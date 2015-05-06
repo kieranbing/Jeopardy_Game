@@ -17,7 +17,7 @@ public class Division {
     int number1;
     int number2;
     int number3;
-    int answer;
+    double answer;
     boolean correct;
     
     void setLevel(int input) {
