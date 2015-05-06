@@ -1389,7 +1389,11 @@ public class JeopardyGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_sub1000ActionPerformed
 
     private void div200ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_div200ActionPerformed
-        // TODO add your handling code here:
+        div.question();
+        q.syncQuestion(div.question, div.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        div200.setEnabled(false);
     }//GEN-LAST:event_div200ActionPerformed
 
     private void div400ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_div400ActionPerformed
