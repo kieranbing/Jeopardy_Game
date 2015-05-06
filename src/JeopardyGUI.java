@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
  */
 
 public class JeopardyGUI extends javax.swing.JFrame {
-    //Define objects
+    //Define objects 
     Multiplication multi = new Multiplication();
     Addition add = new Addition();
     Subtraction sub = new Subtraction(); 
