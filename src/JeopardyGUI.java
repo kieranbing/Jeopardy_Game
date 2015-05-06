@@ -16,6 +16,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
     Multiplication multi = new Multiplication();
     Addition add = new Addition();
     Subtraction sub = new Subtraction(); 
+    Division div = new Division();
     Question q = new Question();
     Runnable r = new Updater();
     //Create array(s)
