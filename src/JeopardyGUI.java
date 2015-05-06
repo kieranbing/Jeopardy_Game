@@ -467,76 +467,151 @@ public class JeopardyGUI extends javax.swing.JFrame {
         multi600.setMaximumSize(new java.awt.Dimension(121, 50));
         multi600.setMinimumSize(new java.awt.Dimension(121, 23));
         multi600.setPreferredSize(new java.awt.Dimension(121, 50));
+        multi600.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                multi600ActionPerformed(evt);
+            }
+        });
 
         multi800.setText("$800");
         multi800.setMaximumSize(new java.awt.Dimension(121, 50));
         multi800.setMinimumSize(new java.awt.Dimension(121, 23));
         multi800.setPreferredSize(new java.awt.Dimension(121, 50));
+        multi800.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                multi800ActionPerformed(evt);
+            }
+        });
 
         multi1000.setText("$1000");
         multi1000.setMaximumSize(new java.awt.Dimension(121, 50));
         multi1000.setMinimumSize(new java.awt.Dimension(121, 23));
         multi1000.setPreferredSize(new java.awt.Dimension(121, 50));
+        multi1000.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                multi1000ActionPerformed(evt);
+            }
+        });
 
         add600.setText("$600");
         add600.setMaximumSize(new java.awt.Dimension(121, 50));
         add600.setMinimumSize(new java.awt.Dimension(121, 23));
         add600.setPreferredSize(new java.awt.Dimension(121, 50));
+        add600.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add600ActionPerformed(evt);
+            }
+        });
 
         add800.setText("$800");
         add800.setMaximumSize(new java.awt.Dimension(121, 50));
         add800.setMinimumSize(new java.awt.Dimension(121, 23));
         add800.setPreferredSize(new java.awt.Dimension(121, 50));
+        add800.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add800ActionPerformed(evt);
+            }
+        });
 
         add1000.setText("$1000");
         add1000.setMaximumSize(new java.awt.Dimension(121, 50));
         add1000.setMinimumSize(new java.awt.Dimension(121, 23));
         add1000.setPreferredSize(new java.awt.Dimension(121, 50));
+        add1000.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add1000ActionPerformed(evt);
+            }
+        });
 
         sub400.setText("$400");
         sub400.setMaximumSize(new java.awt.Dimension(121, 50));
         sub400.setMinimumSize(new java.awt.Dimension(121, 23));
         sub400.setPreferredSize(new java.awt.Dimension(121, 50));
+        sub400.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sub400ActionPerformed(evt);
+            }
+        });
 
         sub600.setText("$600");
         sub600.setMaximumSize(new java.awt.Dimension(121, 50));
         sub600.setMinimumSize(new java.awt.Dimension(121, 23));
         sub600.setPreferredSize(new java.awt.Dimension(121, 50));
+        sub600.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sub600ActionPerformed(evt);
+            }
+        });
 
         sub800.setText("$800");
         sub800.setMaximumSize(new java.awt.Dimension(121, 50));
         sub800.setMinimumSize(new java.awt.Dimension(121, 23));
         sub800.setPreferredSize(new java.awt.Dimension(121, 50));
+        sub800.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sub800ActionPerformed(evt);
+            }
+        });
 
         sub1000.setText("$1000");
         sub1000.setMaximumSize(new java.awt.Dimension(121, 50));
         sub1000.setMinimumSize(new java.awt.Dimension(121, 23));
         sub1000.setPreferredSize(new java.awt.Dimension(121, 50));
+        sub1000.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sub1000ActionPerformed(evt);
+            }
+        });
 
         div400.setText("$400");
         div400.setMaximumSize(new java.awt.Dimension(121, 50));
         div400.setMinimumSize(new java.awt.Dimension(121, 23));
         div400.setPreferredSize(new java.awt.Dimension(121, 50));
+        div400.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                div400ActionPerformed(evt);
+            }
+        });
 
         div600.setText("$600");
         div600.setMaximumSize(new java.awt.Dimension(121, 50));
         div600.setMinimumSize(new java.awt.Dimension(121, 23));
         div600.setPreferredSize(new java.awt.Dimension(121, 50));
+        div600.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                div600ActionPerformed(evt);
+            }
+        });
 
         div800.setText("$800");
         div800.setMaximumSize(new java.awt.Dimension(121, 50));
         div800.setMinimumSize(new java.awt.Dimension(121, 23));
         div800.setPreferredSize(new java.awt.Dimension(121, 50));
+        div800.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                div800ActionPerformed(evt);
+            }
+        });
 
         div1000.setText("$1000");
         div1000.setMaximumSize(new java.awt.Dimension(121, 50));
         div1000.setMinimumSize(new java.awt.Dimension(121, 23));
         div1000.setPreferredSize(new java.awt.Dimension(121, 50));
+        div1000.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                div1000ActionPerformed(evt);
+            }
+        });
 
         div200.setText("$200");
         div200.setMaximumSize(new java.awt.Dimension(121, 50));
         div200.setMinimumSize(new java.awt.Dimension(121, 23));
         div200.setPreferredSize(new java.awt.Dimension(121, 50));
+        div200.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                div200ActionPerformed(evt);
+            }
+        });
 
         teamOnePanel.setBackground(new java.awt.Color(0, 0, 153));
         teamOnePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
@@ -1271,6 +1346,66 @@ public class JeopardyGUI extends javax.swing.JFrame {
         popupStart();
         sub200.setEnabled(false);
     }//GEN-LAST:event_sub200ActionPerformed
+
+    private void multi600ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multi600ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_multi600ActionPerformed
+
+    private void multi800ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multi800ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_multi800ActionPerformed
+
+    private void multi1000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multi1000ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_multi1000ActionPerformed
+
+    private void add600ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add600ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add600ActionPerformed
+
+    private void add800ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add800ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add800ActionPerformed
+
+    private void add1000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add1000ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add1000ActionPerformed
+
+    private void sub400ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub400ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sub400ActionPerformed
+
+    private void sub600ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub600ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sub600ActionPerformed
+
+    private void sub800ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub800ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sub800ActionPerformed
+
+    private void sub1000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub1000ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sub1000ActionPerformed
+
+    private void div200ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_div200ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_div200ActionPerformed
+
+    private void div400ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_div400ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_div400ActionPerformed
+
+    private void div600ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_div600ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_div600ActionPerformed
+
+    private void div800ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_div800ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_div800ActionPerformed
+
+    private void div1000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_div1000ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_div1000ActionPerformed
       
     private void gameSetup(){ 
         DefaultListModel model = (DefaultListModel) playerList.getModel();
