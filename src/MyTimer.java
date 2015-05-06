@@ -40,7 +40,7 @@ public class MyTimer {
         return done; 
     }
     
-    void countdown() {
+    boolean countdown() {
         int delay = 1000;
         int period = 1000;
         timer = new Timer();
@@ -49,9 +49,9 @@ public class MyTimer {
         timer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
                 System.out.println(setInterval());
-
             }
         }, delay, period);
+        return true; 
     }
     
     int setInterval() {

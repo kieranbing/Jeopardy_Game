@@ -18,19 +18,24 @@ public class JeopardyGUI extends javax.swing.JFrame {
     Subtraction sub = new Subtraction(); 
     Question q = new Question();
     Runnable r = new Updater();
+    Runnable outOfTime = new noTime();
     //Create array(s)
     String[] teamNames = new String[4];
     //Define vars
-    int gameTimer = 30; 
+    int timerSet = 30; 
+    int gameTimer = timerSet; 
     boolean doubleJeopardyToggle = false; 
-    boolean done;
+    boolean popupCountdown = false;
     int[] score = {0,0,0,0};
+    
+    ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
     
     /**
      * Creates new form JeopardyGUI
      */
     public JeopardyGUI() {
         initComponents();
+        service.scheduleAtFixedRate(r, 0, 1, TimeUnit.SECONDS);
     }
 
     /**
@@ -126,6 +131,8 @@ public class JeopardyGUI extends javax.swing.JFrame {
         teamTwoRadio = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         questionArea = new javax.swing.JTextArea();
+        noTimePanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("JEOPARDY!  by: Kieran & Cameron");
@@ -932,6 +939,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
         popupFrame.setBackground(new java.awt.Color(0, 0, 153));
         popupFrame.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         popupFrame.setVisible(true);
+        popupFrame.getContentPane().setLayout(new java.awt.CardLayout());
 
         popupPanel.setBackground(new java.awt.Color(0, 0, 153));
 
@@ -1093,19 +1101,37 @@ public class JeopardyGUI extends javax.swing.JFrame {
                 .addGroup(popupPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(popupSubmitButton)
                     .addComponent(popupText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout popupFrameLayout = new javax.swing.GroupLayout(popupFrame.getContentPane());
-        popupFrame.getContentPane().setLayout(popupFrameLayout);
-        popupFrameLayout.setHorizontalGroup(
-            popupFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(popupPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        popupFrame.getContentPane().add(popupPanel, "mainCard");
+
+        noTimePanel.setBackground(new java.awt.Color(0, 0, 153));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resorces/answer-red-x.png"))); // NOI18N
+        jLabel1.setText("Out of Time");
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout noTimePanelLayout = new javax.swing.GroupLayout(noTimePanel);
+        noTimePanel.setLayout(noTimePanelLayout);
+        noTimePanelLayout.setHorizontalGroup(
+            noTimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(noTimePanelLayout.createSequentialGroup()
+                .addGap(128, 128, 128)
+                .addComponent(jLabel1)
+                .addContainerGap(129, Short.MAX_VALUE))
         );
-        popupFrameLayout.setVerticalGroup(
-            popupFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(popupPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        noTimePanelLayout.setVerticalGroup(
+            noTimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(noTimePanelLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jLabel1)
+                .addContainerGap(66, Short.MAX_VALUE))
         );
+
+        popupFrame.getContentPane().add(noTimePanel, "noTime");
 
         javax.swing.GroupLayout jLayeredPaneLayout = new javax.swing.GroupLayout(jLayeredPane);
         jLayeredPane.setLayout(jLayeredPaneLayout);
@@ -1114,7 +1140,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
             .addGroup(jLayeredPaneLayout.createSequentialGroup()
                 .addGap(174, 174, 174)
                 .addComponent(popupFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
             .addGroup(jLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPaneLayout.createSequentialGroup()
                     .addGap(0, 0, 0)
@@ -1126,7 +1152,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
             .addGroup(jLayeredPaneLayout.createSequentialGroup()
                 .addGap(125, 125, 125)
                 .addComponent(popupFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(156, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
             .addGroup(jLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPaneLayout.createSequentialGroup()
                     .addGap(0, 0, 0)
@@ -1195,7 +1221,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
 
     private void timerSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_timerSliderStateChanged
         sliderLabel.setText(String.valueOf(timerSlider.getValue()) + " seconds");
-        gameTimer = timerSlider.getValue();
+        timerSet = timerSlider.getValue();
     }//GEN-LAST:event_timerSliderStateChanged
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
@@ -1480,11 +1506,13 @@ public class JeopardyGUI extends javax.swing.JFrame {
     void popupStart(){
         enableComponents(popupFrame, true); 
         teamBuzzer(); 
+        gameTimer = timerSet; 
         popupNameGroup.clearSelection(); 
         questionArea.setText(q.question);
         timerLabel.setText(String.valueOf(gameTimer)); 
         timerProgress.setMaximum(gameTimer);
         toolBar.setEnabled(false);
+        popupCountdown = true; 
         
         //Start timer
         
@@ -1518,23 +1546,38 @@ public class JeopardyGUI extends javax.swing.JFrame {
         }
         
 //        Runnable r = new Updater();
-        ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
-        service.scheduleAtFixedRate(r, 0, 1, TimeUnit.SECONDS);
+//        ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
+//        service.scheduleAtFixedRate(r, 0, 1, TimeUnit.SECONDS);
 //        service.shutdown(); 
     }
     
     private class Updater implements Runnable {
         @Override
         public void run() {
-            if (gameTimer >= 1){ 
-            timerLabel.setText(String.valueOf(gameTimer));
-            timerProgress.setValue(gameTimer);
-            gameTimer--; 
-            } else if (gameTimer == 0){
-//                cancel();
-            }   
+            if (popupCountdown == true) {
+                if (gameTimer >= 1) {
+                    timerLabel.setText(String.valueOf(gameTimer));
+                    timerProgress.setValue(gameTimer);
+                    gameTimer--;
+                } else if (gameTimer == 0) {
+                    outOfTime.run();
+                    popupCountdown = false; 
+                    CardLayout cl = (CardLayout)(popupFrame.getLayout());
+                    cl.addLayoutComponent("noTime", noTimePanel);
+                    cl.show(popupFrame, "noTime");
+                }
+            }
         }
     }
+    
+    
+    private class noTime implements Runnable {
+        @Override
+        public void run() {
+            System.out.println("I WORK MOTHERFUCKER");
+        }
+    }
+    
     
     public void enableComponents(Container container, boolean enable) {
         Component[] components = container.getComponents();
@@ -1607,6 +1650,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
     private javax.swing.JButton goButton;
     private javax.swing.JButton jButton30;
     private javax.swing.JButton jButton8;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLayeredPane jLayeredPane;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
@@ -1623,6 +1667,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
     private javax.swing.JButton multi600;
     private javax.swing.JButton multi800;
     private javax.swing.JTextField nameField;
+    private javax.swing.JPanel noTimePanel;
     private javax.swing.JList playerList;
     private javax.swing.JLabel playersError;
     private javax.swing.JInternalFrame popupFrame;
