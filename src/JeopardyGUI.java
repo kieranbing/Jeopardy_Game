@@ -2,6 +2,7 @@
 import java.awt.CardLayout;
 import javax.swing.DefaultListModel;
 import java.awt.*;
+import java.util.Arrays;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -21,13 +22,20 @@ public class JeopardyGUI extends javax.swing.JFrame {
 //    Runnable outOfTime = new noTime();
     //Create array(s)
     String[] teamNames = new String[4];
+    int[] score = {0,0,0,0};
     //Define vars
+    int radioSelected = 0; 
+    int qValue; 
+    boolean doubleJeopardyToggle = false; 
+    boolean popup = false; 
+    //Timer vars
+    boolean popupCountdown = false;
+    boolean popupEndCountdown = false; 
+    boolean playerErrorCount = false; 
+    boolean correct; 
     int timerSet = 30; 
     int gameTimer = timerSet; 
     int errorTimer = 3;
-    boolean doubleJeopardyToggle = false; 
-    boolean popupCountdown = false;
-    int[] score = {0,0,0,0};
     
     ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
     
@@ -49,16 +57,19 @@ public class JeopardyGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         popupNameGroup = new javax.swing.ButtonGroup();
+        jLabel4 = new javax.swing.JLabel();
         jLayeredPane = new javax.swing.JLayeredPane();
         mainPanel = new javax.swing.JPanel();
         splashScreen = new javax.swing.JPanel();
         titleImage = new javax.swing.JLabel();
         mainMenuButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         settingsPage = new javax.swing.JPanel();
         toolBarSettings = new javax.swing.JPanel();
         titleImage2 = new javax.swing.JLabel();
-        menuButton1 = new javax.swing.JButton();
-        jButton30 = new javax.swing.JButton();
         addTitle = new javax.swing.JLabel();
         addButton = new javax.swing.JButton();
         nameField = new javax.swing.JTextField();
@@ -69,15 +80,12 @@ public class JeopardyGUI extends javax.swing.JFrame {
         timerTitle = new javax.swing.JLabel();
         playerList = new javax.swing.JList();
         removeButton = new javax.swing.JButton();
-        editButton = new javax.swing.JButton();
         goButton = new javax.swing.JButton();
         playersError = new javax.swing.JLabel();
         setupError = new javax.swing.JLabel();
         gamePage = new javax.swing.JPanel();
         toolBar = new javax.swing.JPanel();
         titleImage1 = new javax.swing.JLabel();
-        menuButton = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
         questionOneLabel = new javax.swing.JLabel();
         questionOneLabel1 = new javax.swing.JLabel();
         questionOneLabel2 = new javax.swing.JLabel();
@@ -133,8 +141,14 @@ public class JeopardyGUI extends javax.swing.JFrame {
         teamTwoRadio = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         questionArea = new javax.swing.JTextArea();
-        noTimePanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        incorrectPanel = new javax.swing.JPanel();
+        incorrectLabel = new javax.swing.JLabel();
+        correctPanel = new javax.swing.JPanel();
+        correctLabel = new javax.swing.JLabel();
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Cameron Sokalski");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("JEOPARDY!  by: Kieran & Cameron");
@@ -158,6 +172,22 @@ public class JeopardyGUI extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Credits: ");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Kieran Bingham");
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Cameron Sokalski");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Baised off Jeopardy!tm");
+
         javax.swing.GroupLayout splashScreenLayout = new javax.swing.GroupLayout(splashScreen);
         splashScreen.setLayout(splashScreenLayout);
         splashScreenLayout.setHorizontalGroup(
@@ -169,17 +199,34 @@ public class JeopardyGUI extends javax.swing.JFrame {
                         .addComponent(mainMenuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(splashScreenLayout.createSequentialGroup()
                         .addGap(144, 144, 144)
-                        .addComponent(titleImage, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(titleImage, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(splashScreenLayout.createSequentialGroup()
+                        .addGap(235, 235, 235)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(splashScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2))))
                 .addContainerGap(145, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, splashScreenLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel5))
         );
         splashScreenLayout.setVerticalGroup(
             splashScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(splashScreenLayout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addComponent(titleImage)
-                .addGap(111, 111, 111)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(splashScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addGap(64, 64, 64)
                 .addComponent(mainMenuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 162, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
+                .addComponent(jLabel5))
         );
 
         mainPanel.add(splashScreen, "card1");
@@ -190,36 +237,19 @@ public class JeopardyGUI extends javax.swing.JFrame {
         titleImage2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resorces/small_Logo_crop.png"))); // NOI18N
         titleImage2.setPreferredSize(new java.awt.Dimension(103, 50));
 
-        menuButton1.setFont(menuButton1.getFont().deriveFont(menuButton1.getFont().getStyle() | java.awt.Font.BOLD, menuButton1.getFont().getSize()+3));
-        menuButton1.setText("Main Menu");
-        menuButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        menuButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton30.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton30.setText("Credits");
-
         javax.swing.GroupLayout toolBarSettingsLayout = new javax.swing.GroupLayout(toolBarSettings);
         toolBarSettings.setLayout(toolBarSettingsLayout);
         toolBarSettingsLayout.setHorizontalGroup(
             toolBarSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(toolBarSettingsLayout.createSequentialGroup()
                 .addComponent(titleImage2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(menuButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton30)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         toolBarSettingsLayout.setVerticalGroup(
             toolBarSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(titleImage2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(toolBarSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(menuButton1)
-                .addComponent(jButton30))
+            .addGroup(toolBarSettingsLayout.createSequentialGroup()
+                .addComponent(titleImage2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2))
         );
 
         addTitle.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
@@ -252,8 +282,9 @@ public class JeopardyGUI extends javax.swing.JFrame {
         doubleRadio.setBackground(new java.awt.Color(0, 0, 153));
         doubleRadio.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         doubleRadio.setForeground(new java.awt.Color(255, 255, 255));
-        doubleRadio.setText("Double Jeopardy");
+        doubleRadio.setText("<html><strikethrough>Double Jeopardy");
         doubleRadio.setToolTipText("Adds a second round with double points");
+        doubleRadio.setEnabled(false);
         doubleRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 doubleRadioActionPerformed(evt);
@@ -301,9 +332,6 @@ public class JeopardyGUI extends javax.swing.JFrame {
             }
         });
 
-        editButton.setText("Edit");
-        editButton.setEnabled(false);
-
         goButton.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         goButton.setText("GO!");
         goButton.addActionListener(new java.awt.event.ActionListener() {
@@ -317,7 +345,6 @@ public class JeopardyGUI extends javax.swing.JFrame {
 
         setupError.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         setupError.setForeground(new java.awt.Color(255, 0, 0));
-        setupError.setText("Error");
 
         javax.swing.GroupLayout settingsPageLayout = new javax.swing.GroupLayout(settingsPage);
         settingsPage.setLayout(settingsPageLayout);
@@ -334,7 +361,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, settingsPageLayout.createSequentialGroup()
                         .addGroup(settingsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(settingsTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(doubleRadio)
+                            .addComponent(doubleRadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(settingsPageLayout.createSequentialGroup()
                                 .addComponent(timerSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -345,8 +372,6 @@ public class JeopardyGUI extends javax.swing.JFrame {
                             .addGroup(settingsPageLayout.createSequentialGroup()
                                 .addComponent(playersError)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(editButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(removeButton))
                             .addGroup(settingsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, settingsPageLayout.createSequentialGroup()
@@ -367,7 +392,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
                     .addGroup(settingsPageLayout.createSequentialGroup()
                         .addComponent(settingsTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(doubleRadio)
+                        .addComponent(doubleRadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(timerTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(5, 5, 5)
@@ -383,7 +408,6 @@ public class JeopardyGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(settingsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(removeButton)
-                    .addComponent(editButton)
                     .addComponent(playersError))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
                 .addGroup(settingsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -404,36 +428,19 @@ public class JeopardyGUI extends javax.swing.JFrame {
         titleImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resorces/small_Logo_crop.png"))); // NOI18N
         titleImage1.setPreferredSize(new java.awt.Dimension(103, 50));
 
-        menuButton.setFont(menuButton.getFont().deriveFont(menuButton.getFont().getStyle() | java.awt.Font.BOLD, menuButton.getFont().getSize()+3));
-        menuButton.setText("Main Menu");
-        menuButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        menuButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuButtonActionPerformed(evt);
-            }
-        });
-
-        jButton8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton8.setText("Credits");
-
         javax.swing.GroupLayout toolBarLayout = new javax.swing.GroupLayout(toolBar);
         toolBar.setLayout(toolBarLayout);
         toolBarLayout.setHorizontalGroup(
             toolBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(toolBarLayout.createSequentialGroup()
                 .addComponent(titleImage1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(menuButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton8)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         toolBarLayout.setVerticalGroup(
             toolBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(titleImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(toolBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(menuButton)
-                .addComponent(jButton8))
+            .addGroup(toolBarLayout.createSequentialGroup()
+                .addComponent(titleImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2))
         );
 
         questionOneLabel.setFont(questionOneLabel.getFont().deriveFont(questionOneLabel.getFont().getStyle() | java.awt.Font.BOLD, questionOneLabel.getFont().getSize()+6));
@@ -1109,32 +1116,59 @@ public class JeopardyGUI extends javax.swing.JFrame {
 
         popupMain.add(popupPanel, "mainCard");
 
-        noTimePanel.setBackground(new java.awt.Color(0, 0, 153));
+        incorrectPanel.setBackground(new java.awt.Color(0, 0, 153));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resorces/answer-red-x.png"))); // NOI18N
-        jLabel1.setText("Out of Time");
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        incorrectLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        incorrectLabel.setForeground(new java.awt.Color(255, 255, 255));
+        incorrectLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resorces/answer-red-x.png"))); // NOI18N
+        incorrectLabel.setText("Out of Time");
+        incorrectLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        javax.swing.GroupLayout noTimePanelLayout = new javax.swing.GroupLayout(noTimePanel);
-        noTimePanel.setLayout(noTimePanelLayout);
-        noTimePanelLayout.setHorizontalGroup(
-            noTimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(noTimePanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout incorrectPanelLayout = new javax.swing.GroupLayout(incorrectPanel);
+        incorrectPanel.setLayout(incorrectPanelLayout);
+        incorrectPanelLayout.setHorizontalGroup(
+            incorrectPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(incorrectPanelLayout.createSequentialGroup()
                 .addGap(128, 128, 128)
-                .addComponent(jLabel1)
+                .addComponent(incorrectLabel)
                 .addContainerGap(129, Short.MAX_VALUE))
         );
-        noTimePanelLayout.setVerticalGroup(
-            noTimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(noTimePanelLayout.createSequentialGroup()
+        incorrectPanelLayout.setVerticalGroup(
+            incorrectPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(incorrectPanelLayout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addComponent(jLabel1)
+                .addComponent(incorrectLabel)
                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
-        popupMain.add(noTimePanel, "noTime");
+        popupMain.add(incorrectPanel, "incorrect");
+
+        correctPanel.setBackground(new java.awt.Color(0, 0, 153));
+
+        correctLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        correctLabel.setForeground(new java.awt.Color(255, 255, 255));
+        correctLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resorces/green-check-mark.png"))); // NOI18N
+        correctLabel.setText("Correct!");
+        correctLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout correctPanelLayout = new javax.swing.GroupLayout(correctPanel);
+        correctPanel.setLayout(correctPanelLayout);
+        correctPanelLayout.setHorizontalGroup(
+            correctPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(correctPanelLayout.createSequentialGroup()
+                .addGap(128, 128, 128)
+                .addComponent(correctLabel)
+                .addContainerGap(129, Short.MAX_VALUE))
+        );
+        correctPanelLayout.setVerticalGroup(
+            correctPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(correctPanelLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(correctLabel)
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+
+        popupMain.add(correctPanel, "correct");
 
         javax.swing.GroupLayout popupFrameLayout = new javax.swing.GroupLayout(popupFrame.getContentPane());
         popupFrame.getContentPane().setLayout(popupFrameLayout);
@@ -1207,13 +1241,9 @@ public class JeopardyGUI extends javax.swing.JFrame {
         cl.next(mainPanel);
     }//GEN-LAST:event_mainMenuButtonActionPerformed
 
-    private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
-        CardLayout cl = (CardLayout)(mainPanel.getLayout());
-        cl.next(mainPanel);
-    }//GEN-LAST:event_menuButtonActionPerformed
-
     private void multi200ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multi200ActionPerformed
         multi.question(); 
+        qValue = 200; 
         q.syncQuestion(multi.question, multi.answer);
         jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
         popupStart();
@@ -1222,16 +1252,12 @@ public class JeopardyGUI extends javax.swing.JFrame {
 
     private void multi400ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multi400ActionPerformed
         multi.question(); 
+        qValue = 400; 
         q.syncQuestion(multi.question, multi.answer);
         jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
         popupStart();
         multi400.setEnabled(false);
     }//GEN-LAST:event_multi400ActionPerformed
-
-    private void menuButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButton1ActionPerformed
-        CardLayout cl = (CardLayout)(mainPanel.getLayout());
-        cl.previous(mainPanel);
-    }//GEN-LAST:event_menuButton1ActionPerformed
 
     private void timerSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_timerSliderStateChanged
         sliderLabel.setText(String.valueOf(timerSlider.getValue()) + " seconds");
@@ -1256,16 +1282,22 @@ public class JeopardyGUI extends javax.swing.JFrame {
             if (!"".equals(nameField.getText())) {
                 if (nameField.getText().length() > 15){
                     playersError.setText("Max 15 characters");
+                    playerErrorCount = true;
                 } else {
-                    model.addElement(nameField.getText().replaceAll("[ \\t]+", " "));
+                    if (!"".equals(nameField.getText().replaceAll("[ \\t]+", ""))) {
+                        model.addElement(nameField.getText().replaceAll("[ \\t]+", ""));
+                    } else {
+                        playersError.setText("Must not be blank");
+                        playerErrorCount = true;
+                    }
                     nameField.setText("");
-                    playersError.setText("");
                     if (model.getSize() >= 4){
                         addButton.setEnabled(false);
                     }
                 }
             } else {
                 playersError.setText("You can't add a blank name");
+                playerErrorCount = true;
             }
         }
         //System.out.println(timer.coundtdownFrom(5));
@@ -1281,7 +1313,6 @@ public class JeopardyGUI extends javax.swing.JFrame {
         int size = model.getSize();
         if (size == 0) { //Nobody's left, disable
             removeButton.setEnabled(false);
-            editButton.setEnabled(false);
         } else { //Select an index.
             if (index == model.getSize()) {
                 //removed item in last position
@@ -1295,20 +1326,15 @@ public class JeopardyGUI extends javax.swing.JFrame {
     private void playerListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_playerListMouseClicked
         playersError.setText("");
         if (playerList.getSelectedIndex() == -1) {
-            editButton.setEnabled(false);
             removeButton.setEnabled(false);
         } else {
-            editButton.setEnabled(true);
             removeButton.setEnabled(true);
         }
     }//GEN-LAST:event_playerListMouseClicked
 
     private void goButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goButtonActionPerformed
         playersError.setText("");
-//        CardLayout cl = (CardLayout)(mainPanel.getLayout());
         gameSetup(); 
-//        cl.next(mainPanel);
-        
     }//GEN-LAST:event_goButtonActionPerformed
 
     private void nameFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameFieldKeyTyped
@@ -1321,7 +1347,6 @@ public class JeopardyGUI extends javax.swing.JFrame {
 
     private void doubleRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doubleRadioActionPerformed
         doubleJeopardyToggle ^= true;
-//        setupError.setText(Boolean.toString(doubleJeopardyToggle));
     }//GEN-LAST:event_doubleRadioActionPerformed
 
     private void popupTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_popupTextActionPerformed
@@ -1332,119 +1357,168 @@ public class JeopardyGUI extends javax.swing.JFrame {
         popupText.setText(""); 
         popupText.setEnabled(true);
         popupSubmitButton.setEnabled(true); 
+        radioSelected = 3; 
     }//GEN-LAST:event_teamThreeRadioActionPerformed
 
     private void popupSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_popupSubmitButtonActionPerformed
-        popupText.setText(String.valueOf(q.checkAnswer(popupText)));
+       if (q.checkAnswer(popupText) == true){
+            score[radioSelected-1] = score[radioSelected - 1] + qValue;
+            updateScore(); 
+            CardLayout cl = (CardLayout) (popupMain.getLayout());
+            cl.show(popupMain, "correct");
+            popupEndCountdown = true; 
+            correct = true; 
+        } else {
+            CardLayout cl = (CardLayout) (popupMain.getLayout());
+            cl.show(popupMain, "incorrect");
+            incorrectLabel.setText("Wrong!");
+            popupEndCountdown = true; 
+            correct = false; 
+        }
     }//GEN-LAST:event_popupSubmitButtonActionPerformed
 
     private void teamOneRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teamOneRadioActionPerformed
         popupText.setText(""); 
         popupText.setEnabled(true);
         popupSubmitButton.setEnabled(true); 
-        
-//        multi.question(); 
-////        teamBuzzer(); 
-//        questionArea.setText(multi.question); 
-////        popupStart(); 
-////        enableComponents(gamePage, false);   
-////        jLayeredPane.setLayer(popupFrame, 0);
+        radioSelected = 1; 
     }//GEN-LAST:event_teamOneRadioActionPerformed
 
     private void teamTwoRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teamTwoRadioActionPerformed
         popupText.setText(""); 
         popupText.setEnabled(true);
-        popupSubmitButton.setEnabled(true); 
+        popupSubmitButton.setEnabled(true);
+        radioSelected = 2; 
     }//GEN-LAST:event_teamTwoRadioActionPerformed
 
     private void teamFourRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teamFourRadioActionPerformed
         popupText.setText(""); 
         popupText.setEnabled(true);
         popupSubmitButton.setEnabled(true); 
+        radioSelected = 4; 
     }//GEN-LAST:event_teamFourRadioActionPerformed
 
     private void add200ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add200ActionPerformed
-        add.question();
-        q.syncQuestion(add.question, add.answer);
-        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
-        popupStart();
-        add200.setEnabled(false);
+        if (popup == false) {
+            add.question();
+            qValue = 200;
+            q.syncQuestion(add.question, add.answer);
+            jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+            popupStart();
+            add200.setEnabled(false);
+        }
     }//GEN-LAST:event_add200ActionPerformed
 
     private void add400ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add400ActionPerformed
-        add.question();
-        q.syncQuestion(add.question, add.answer);
-        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
-        popupStart();
-        add400.setEnabled(false);
+        if (popup == false) {
+            add.question();
+            qValue = 400;
+            q.syncQuestion(add.question, add.answer);
+            jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+            popupStart();
+            add400.setEnabled(false);
+        }
     }//GEN-LAST:event_add400ActionPerformed
 
     private void sub200ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub200ActionPerformed
-        sub.question();
-        q.syncQuestion(sub.question, sub.answer);
-        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
-        popupStart();
-        sub200.setEnabled(false);
+        if (popup == false) {
+            sub.question();
+            qValue = 200;
+            q.syncQuestion(sub.question, sub.answer);
+            jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+            popupStart();
+            sub200.setEnabled(false);
+        }
     }//GEN-LAST:event_sub200ActionPerformed
 
     private void multi600ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multi600ActionPerformed
-        // TODO add your handling code here:
+        if (popup == false){  
+            qValue = 600; 
+        }
     }//GEN-LAST:event_multi600ActionPerformed
 
     private void multi800ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multi800ActionPerformed
-        // TODO add your handling code here:
+        if (popup == false){  
+            qValue = 800; 
+        }
     }//GEN-LAST:event_multi800ActionPerformed
 
     private void multi1000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multi1000ActionPerformed
-        // TODO add your handling code here:
+        if (popup == false){  
+            qValue = 1000; 
+        }
     }//GEN-LAST:event_multi1000ActionPerformed
 
     private void add600ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add600ActionPerformed
-        // TODO add your handling code here:
+        if (popup == false){  
+            qValue = 600; 
+        }
     }//GEN-LAST:event_add600ActionPerformed
 
     private void add800ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add800ActionPerformed
-        // TODO add your handling code here:
+        if (popup == false){  
+            qValue = 800; 
+        }
     }//GEN-LAST:event_add800ActionPerformed
 
     private void add1000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add1000ActionPerformed
-        // TODO add your handling code here:
+        if (popup == false){  
+            qValue = 1000; 
+        }
     }//GEN-LAST:event_add1000ActionPerformed
 
     private void sub400ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub400ActionPerformed
-        // TODO add your handling code here:
+        if (popup == false){  
+            qValue = 400; 
+        }
     }//GEN-LAST:event_sub400ActionPerformed
 
     private void sub600ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub600ActionPerformed
-        // TODO add your handling code here:
+        if (popup == false){  
+            qValue = 600; 
+        }
     }//GEN-LAST:event_sub600ActionPerformed
 
     private void sub800ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub800ActionPerformed
-        // TODO add your handling code here:
+        if (popup == false){  
+            qValue = 800; 
+        }
     }//GEN-LAST:event_sub800ActionPerformed
 
     private void sub1000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub1000ActionPerformed
-        // TODO add your handling code here:
+        if (popup == false){  
+            qValue = 1000; 
+        }
     }//GEN-LAST:event_sub1000ActionPerformed
 
     private void div200ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_div200ActionPerformed
-        // TODO add your handling code here:
+        if (popup == false){  
+            qValue = 200; 
+        }
     }//GEN-LAST:event_div200ActionPerformed
 
     private void div400ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_div400ActionPerformed
-        // TODO add your handling code here:
+        if (popup == false){  
+            qValue = 400; 
+        }
     }//GEN-LAST:event_div400ActionPerformed
 
     private void div600ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_div600ActionPerformed
-        // TODO add your handling code here:
+        if (popup == false){  
+            qValue = 600; 
+        }
     }//GEN-LAST:event_div600ActionPerformed
 
     private void div800ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_div800ActionPerformed
-        // TODO add your handling code here:
+        if (popup == false){  
+            qValue = 800; 
+        }
     }//GEN-LAST:event_div800ActionPerformed
 
     private void div1000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_div1000ActionPerformed
-        // TODO add your handling code here:
+        if (popup == false) {
+            qValue = 1000;
+        }
     }//GEN-LAST:event_div1000ActionPerformed
       
     private void gameSetup(){ 
@@ -1518,14 +1592,17 @@ public class JeopardyGUI extends javax.swing.JFrame {
     }
     
     void popupStart(){
+        popup = true;
+        CardLayout cl = (CardLayout) (popupMain.getLayout());
+        cl.show(popupMain, "mainCard");
         enableComponents(popupFrame, true); 
         teamBuzzer(); 
         gameTimer = timerSet; 
         popupNameGroup.clearSelection(); 
+        radioSelected = 0; 
         questionArea.setText(q.question);
         timerLabel.setText(String.valueOf(gameTimer)); 
         timerProgress.setMaximum(gameTimer);
-        toolBar.setEnabled(false);
         popupCountdown = true; 
         
         //Start timer
@@ -1576,7 +1653,8 @@ public class JeopardyGUI extends javax.swing.JFrame {
                 } else if (gameTimer == 0) {
                     //outOfTime.run();
                     CardLayout cl = (CardLayout) (popupMain.getLayout());
-                    cl.show(popupMain, "noTime");
+                    cl.show(popupMain, "incorrect");
+                    incorrectLabel.setText("Time's Up!");
                     if (errorTimer > 0){
                         errorTimer--;
                     } else {
@@ -1584,8 +1662,58 @@ public class JeopardyGUI extends javax.swing.JFrame {
                         errorTimer = 3;
                         jLayeredPane.setLayer(popupFrame, jLayeredPane.DEFAULT_LAYER);
                         enableComponents(popupFrame, false);
+                        popup = false; 
                     }
                 }
+            }
+            if (popupEndCountdown == true){
+                if (correct == true){
+                    if (errorTimer > 0){
+                        errorTimer--;
+                    } else {
+                        errorTimer = 3;
+                        jLayeredPane.setLayer(popupFrame, jLayeredPane.DEFAULT_LAYER);
+                        enableComponents(popupFrame, false);
+                        popup = false; 
+                        popupEndCountdown = false; 
+                    }
+                } else {
+                    if (errorTimer > 0){
+                        errorTimer--;
+                    } else {
+                        CardLayout cl = (CardLayout) (popupMain.getLayout());
+                        cl.show(popupMain, "mainCard");
+                        errorTimer = 3;
+                        
+                        switch (radioSelected) {
+                            case 1:
+                                teamOneRadio.setEnabled(false);
+                                break;
+                            case 2:
+                                teamTwoRadio.setEnabled(false);
+                                break;
+                            case 3:
+                                teamThreeRadio.setEnabled(false);
+                                break;
+                            case 4:
+                                teamFourRadio.setEnabled(false);
+                                break;
+                        }
+                        popupNameGroup.clearSelection();
+                        radioSelected = 0;
+                        gameTimer = 10; 
+                        teamBuzzer();
+                        popupEndCountdown = false; 
+                    }
+                }
+            }
+            if (playerErrorCount == true){if (errorTimer > 0){
+                        errorTimer--;
+                    } else {
+                        errorTimer = 3;
+                        playersError.setText("");
+                        playerErrorCount = false;
+                    }
             }
         }
     }
@@ -1621,6 +1749,28 @@ public class JeopardyGUI extends javax.swing.JFrame {
         popupText.setText("Hit buzzer (select team)");
         popupText.setEnabled(false);
         popupSubmitButton.setEnabled(false); 
+    }
+    
+    void updateScore(){
+        for (int i = 0;i<4;i++){
+            switch (i + 1){ 
+                case 1: 
+                    teamOneScore.setText("$"+score[i]); 
+                    break;
+                case 2: 
+                    teamTwoScore.setText("$"+score[i]); 
+                    break;
+                case 3:
+                    teamThreeScore.setText("$"+score[i]);
+                    break;
+                case 4: 
+                    teamFourScore.setText("$" +score[i]);
+                    break;
+                default:
+                    setupError.setText("Score Update Error");
+                    return; 
+            }
+        }
     }
     
     /**
@@ -1663,18 +1813,23 @@ public class JeopardyGUI extends javax.swing.JFrame {
     private javax.swing.JButton add800;
     private javax.swing.JButton addButton;
     private javax.swing.JLabel addTitle;
+    private javax.swing.JLabel correctLabel;
+    private javax.swing.JPanel correctPanel;
     private javax.swing.JButton div1000;
     private javax.swing.JButton div200;
     private javax.swing.JButton div400;
     private javax.swing.JButton div600;
     private javax.swing.JButton div800;
     private javax.swing.JRadioButton doubleRadio;
-    private javax.swing.JButton editButton;
     private javax.swing.JPanel gamePage;
     private javax.swing.JButton goButton;
-    private javax.swing.JButton jButton30;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JLabel incorrectLabel;
+    private javax.swing.JPanel incorrectPanel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLayeredPane jLayeredPane;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
@@ -1683,15 +1838,12 @@ public class JeopardyGUI extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JButton mainMenuButton;
     private javax.swing.JPanel mainPanel;
-    private javax.swing.JButton menuButton;
-    private javax.swing.JButton menuButton1;
     private javax.swing.JButton multi1000;
     private javax.swing.JButton multi200;
     private javax.swing.JButton multi400;
     private javax.swing.JButton multi600;
     private javax.swing.JButton multi800;
     private javax.swing.JTextField nameField;
-    private javax.swing.JPanel noTimePanel;
     private javax.swing.JList playerList;
     private javax.swing.JLabel playersError;
     private javax.swing.JInternalFrame popupFrame;
