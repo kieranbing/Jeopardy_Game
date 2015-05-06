@@ -17,6 +17,7 @@ public class Addition {
     String question = "";
     int number1;
     int number2;
+    int number3;
     int answer;
     boolean correct;
 
