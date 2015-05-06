@@ -17,3 +17,4 @@ public class Division {
     int answer;
     boolean correct;
 }
+
