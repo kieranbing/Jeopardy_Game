@@ -1214,6 +1214,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_popupTextActionPerformed
 
     private void teamThreeRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teamThreeRadioActionPerformed
+        popupText.setText(""); 
         popupText.setEnabled(true);
         popupSubmitButton.setEnabled(true); 
     }//GEN-LAST:event_teamThreeRadioActionPerformed
@@ -1223,6 +1224,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_popupSubmitButtonActionPerformed
 
     private void teamOneRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teamOneRadioActionPerformed
+        popupText.setText(""); 
         popupText.setEnabled(true);
         popupSubmitButton.setEnabled(true); 
         
@@ -1235,11 +1237,13 @@ public class JeopardyGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_teamOneRadioActionPerformed
 
     private void teamTwoRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teamTwoRadioActionPerformed
+        popupText.setText(""); 
         popupText.setEnabled(true);
         popupSubmitButton.setEnabled(true); 
     }//GEN-LAST:event_teamTwoRadioActionPerformed
 
     private void teamFourRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teamFourRadioActionPerformed
+        popupText.setText(""); 
         popupText.setEnabled(true);
         popupSubmitButton.setEnabled(true); 
     }//GEN-LAST:event_teamFourRadioActionPerformed
@@ -1340,8 +1344,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
     
     void popupStart(){
         enableComponents(popupFrame, true); 
-        popupText.setEnabled(false);
-        popupSubmitButton.setEnabled(false); 
+        teamBuzzer(); 
         popupNameGroup.clearSelection(); 
         questionArea.setText(q.question);
         timerLabel.setText(String.valueOf(gameTimer)); 
