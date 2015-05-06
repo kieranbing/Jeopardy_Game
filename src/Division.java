@@ -17,7 +17,7 @@ public class Division {
     int number1;
     int number2;
     int number3;
-    double answer;
+    int answer;
     boolean correct;
     
     void setLevel(int input) {
@@ -32,7 +32,7 @@ public class Division {
                 DivisionLevel1();
                 break;
             case 2:
-                DivisionLevel2();
+                DivisionLevel1();
                 break;
             default:
                 System.out.println("Addition question selection error");
@@ -46,8 +46,8 @@ public class Division {
         Random random = new Random();
         
         
-        number1 = Math.abs(random.nextInt(10000)); 
-        number2 = Math.abs(random.nextInt(100));
+        number1 = Math.abs(random.nextInt(10))*10; 
+        number2 = number1/2;
         
         question = number1+" ÷ "+number2+" = ?";
         answer = number1 / number2;  
