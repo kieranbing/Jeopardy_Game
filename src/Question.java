@@ -19,7 +19,7 @@ public class Question {
     //checking answers 
     public boolean checkAnswer(JTextField textField){
         correct = false; 
-        int userNum = Integer.valueOf(textField.getText());
+        double userNum = Double.valueOf(textField.getText());
         if (userNum == answer){
              correct = true; 
         }

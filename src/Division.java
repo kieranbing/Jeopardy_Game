@@ -16,7 +16,7 @@ public class Division {
     int number1Selector;
     int number2Selector;
     int[] firstNumberSelectorArray = {10, 20, 40, 60, 80, 100};
-    int[] secondNumberSelectorArray = {2, 4, 6, 8, 10};
+    int[] secondNumberSelectorArray = {2, 4, 10};
     
     void setLevel(int input) {
         level = input;
@@ -47,7 +47,7 @@ public class Division {
         
         number1Selector = Math.abs(random.nextInt(5));
         number1 = firstNumberSelectorArray[number1Selector]; 
-        number2Selector = Math.abs(random.nextInt(4));
+        number2Selector = Math.abs(random.nextInt(2));
         number2 = secondNumberSelectorArray[number2Selector];
         
         question = number1+" ÷ "+number2+" = ?";
