@@ -1664,6 +1664,7 @@ public class JeopardyGUI extends javax.swing.JFrame {
         timerLabel.setText(String.valueOf(gameTimer)); 
         timerProgress.setMaximum(gameTimer);
         popupCountdown = true; 
+        correct = false; 
         
         //Start timer
         

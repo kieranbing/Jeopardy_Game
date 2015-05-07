@@ -46,7 +46,7 @@ public class Division {
         Random random = new Random();
         
         
-        number1 = Math.abs(random.nextInt(10))*10; 
+        number1 = Math.abs(random.nextInt(10))+1 *10; 
         number2 = number1/2;
         
         question = number1+" ÷ "+number2+" = ?";

@@ -22,6 +22,7 @@ public class Question {
     }
     
     public boolean checkAnswer(JTextField textField){
+        correct = false; 
         int userNum = Integer.valueOf(textField.getText());
         if (userNum == answer){
              correct = true; 
