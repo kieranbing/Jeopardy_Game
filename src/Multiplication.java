@@ -49,7 +49,7 @@ public class Multiplication {
 //        Scanner scanner = new Scanner(System.in);
         correct = false;
         
-        numOne = Math.abs(random.nextInt(10000)); 
+        numOne = Math.abs(random.nextInt(100)); 
         numTwo = Math.abs(random.nextInt(100));
         
         question = numOne+" × "+numTwo+" = ?";
@@ -62,7 +62,7 @@ public class Multiplication {
         Random random = new Random();
         int rightSide;
         
-        int[] numArray = new int[Math.abs(random.nextInt(5-2))+ 2]; 
+        int[] numArray = new int[Math.abs(random.nextInt(4-2))+ 2]; 
         for (int i=0;i<numArray.length;i++){
             numArray[i] = Math.abs(random.nextInt(50)); 
         }
