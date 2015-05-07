@@ -12,10 +12,11 @@ import java.util.concurrent.TimeUnit;
  */
 
 public class JeopardyGUI extends javax.swing.JFrame {
-    //Define objects
+    //Define objects 
     Multiplication multi = new Multiplication();
     Addition add = new Addition();
     Subtraction sub = new Subtraction(); 
+    Division div = new Division();
     Question q = new Question();
     Runnable r = new Updater();
 //    Runnable outOfTime = new noTime();
@@ -1479,6 +1480,11 @@ public class JeopardyGUI extends javax.swing.JFrame {
         if (popup == false){  
             qValue = 200; 
         }
+        div.question();
+        q.syncQuestion(div.question, div.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        div200.setEnabled(false);
     }//GEN-LAST:event_div200ActionPerformed
 
     private void div400ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_div400ActionPerformed
