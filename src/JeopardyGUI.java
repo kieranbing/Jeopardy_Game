@@ -18,7 +18,6 @@ public class JeopardyGUI extends javax.swing.JFrame {
     Division div = new Division();
     Question q = new Question();
     Runnable r = new Updater();
-//    Runnable outOfTime = new noTime();
     //Create array(s)
     String[] teamNames = new String[4];
     int[] score = {0,0,0,0};

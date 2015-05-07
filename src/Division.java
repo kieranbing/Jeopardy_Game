@@ -5,6 +5,7 @@ import java.util.Random;
  * @author Cameron Sokalski
  */
 public class Division {
+    //define variables 
     int level;
     String question = "";
     int number1;
@@ -12,11 +13,16 @@ public class Division {
     int number3;
     int answer;
     boolean correct;
+    int number1Selector;
+    int number2Selector;
+    int[] firstNumberSelectorArray = {10, 20, 40, 60, 80, 100};
+    int[] secondNumberSelectorArray = {2, 4, 6, 8, 10};
     
     void setLevel(int input) {
         level = input;
     }
     
+    //chooses randomly what difficulty of question to ask based on the function selected
     void question() {
         Random random = new Random();
         int chosen = Math.abs(random.nextInt(2)) + 1;
@@ -32,51 +38,20 @@ public class Division {
         }
     }
     
+    //function for level 1 of division
     public void DivisionLevel1(){
         question = "";
         correct = false;
         
         Random random = new Random();
         
-        
-        number1 = Math.abs(random.nextInt(10))+1 *10; 
-        number2 = number1/2;
+        number1Selector = Math.abs(random.nextInt(5));
+        number1 = firstNumberSelectorArray[number1Selector]; 
+        number2Selector = Math.abs(random.nextInt(4));
+        number2 = secondNumberSelectorArray[number2Selector];
         
         question = number1+" ÷ "+number2+" = ?";
         answer = number1 / number2;  
     }
-    
-    public void DivisionLevel2(){
-        question = ""; 
-        correct = false;
-        Random random = new Random();
-        int rightSide;
-        
-        int[] numArray = new int[Math.abs(random.nextInt(5-2))+ 2]; 
-        for (int i=0;i<numArray.length;i++){
-            numArray[i] = Math.abs(random.nextInt(50)); 
-        }
-        int blank = Math.abs(random.nextInt(numArray.length));
-        rightSide = numArray[0];
-        for (int num:numArray){
-            rightSide = rightSide/num; 
-        }
-        
-        for(int i=0;i<numArray.length;i++){
-            if (i == 0){
-                if (i == blank){
-                    question = question + "?";
-                } else {
-                    question = question + Integer.toString(numArray[i]);
-                }
-            } else if (i == blank){
-                question = question + " ÷ ?";
-            } else {
-                question = question+" ÷ "+Integer.toString(numArray[i]);
-            }
-        }
-        question = question +" = "+Integer.toString(rightSide);
-        answer = numArray[blank]; 
-    } 
 }
 

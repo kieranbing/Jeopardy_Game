@@ -7,6 +7,7 @@ import javax.swing.*;
  * @author Kieran Bingham
  */
 public class Multiplication {
+    //define variables 
     int level; 
     String question = "";
     int numOne; 
@@ -19,6 +20,7 @@ public class Multiplication {
         level = input; 
     }
     
+    //chooses randomly what difficulty of question to ask based on the function selected
     void question(){
         Random random = new Random();
         int chosen = Math.abs(random.nextInt(2)) + 1;
@@ -36,12 +38,13 @@ public class Multiplication {
         System.out.println(question);
     }   
     
+    //function for level 1 of multiplication
     public void generateMulti1(){
         qAsked = 1; 
         question = "";
-        Random random = new Random();
-//        Scanner scanner = new Scanner(System.in);
         correct = false;
+        
+        Random random = new Random();
         
         numOne = Math.abs(random.nextInt(10000)); 
         numTwo = Math.abs(random.nextInt(100));
@@ -50,6 +53,7 @@ public class Multiplication {
         answer = numOne * numTwo;  
     } 
     
+    //function for level 2 of multiplication
     public void generateMulti2(){
         qAsked = 2;
         question = ""; 

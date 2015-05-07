@@ -5,7 +5,8 @@ import java.util.Random;
  * @author Cameron Sokalski
  */
 public class Subtraction {
-     int level;
+    //define variables 
+    int level;
     String question = "";
     int number1;
     int number2;
@@ -16,6 +17,7 @@ public class Subtraction {
         level = input;
     }
     
+    //chooses randomly what difficulty of question to ask based on the function selected
     void question() {
         Random random = new Random();
         int chosen = Math.abs(random.nextInt(2)) + 1;
@@ -28,6 +30,7 @@ public class Subtraction {
         }
     }
     
+    //function for level 1 of subtraction
     public void SubtractionLevel1(){
         question = "";
         correct = false;
