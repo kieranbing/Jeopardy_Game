@@ -1420,60 +1420,110 @@ public class JeopardyGUI extends javax.swing.JFrame {
         if (popup == false){  
             qValue = 600; 
         }
+        multi.question();
+        q.syncQuestion(multi.question, multi.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        multi600.setEnabled(false);
     }//GEN-LAST:event_multi600ActionPerformed
 
     private void multi800ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multi800ActionPerformed
         if (popup == false){  
             qValue = 800; 
         }
+        multi.question();
+        q.syncQuestion(multi.question, multi.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        multi800.setEnabled(false);
     }//GEN-LAST:event_multi800ActionPerformed
 
     private void multi1000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multi1000ActionPerformed
         if (popup == false){  
             qValue = 1000; 
         }
+        multi.question();
+        q.syncQuestion(multi.question, multi.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        multi1000.setEnabled(false);
     }//GEN-LAST:event_multi1000ActionPerformed
 
     private void add600ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add600ActionPerformed
         if (popup == false){  
             qValue = 600; 
         }
+        add.question();
+        q.syncQuestion(add.question, add.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        add600.setEnabled(false);
     }//GEN-LAST:event_add600ActionPerformed
 
     private void add800ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add800ActionPerformed
         if (popup == false){  
             qValue = 800; 
         }
+        add.question();
+        q.syncQuestion(add.question, add.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        add800.setEnabled(false);
     }//GEN-LAST:event_add800ActionPerformed
 
     private void add1000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add1000ActionPerformed
         if (popup == false){  
             qValue = 1000; 
         }
+        add.question();
+        q.syncQuestion(add.question, add.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        add1000.setEnabled(false);
     }//GEN-LAST:event_add1000ActionPerformed
 
     private void sub400ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub400ActionPerformed
         if (popup == false){  
             qValue = 400; 
         }
+        sub.question();
+        q.syncQuestion(sub.question, sub.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        sub400.setEnabled(false);
     }//GEN-LAST:event_sub400ActionPerformed
 
     private void sub600ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub600ActionPerformed
         if (popup == false){  
             qValue = 600; 
         }
+        sub.question();
+        q.syncQuestion(sub.question, sub.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        sub600.setEnabled(false);
     }//GEN-LAST:event_sub600ActionPerformed
 
     private void sub800ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub800ActionPerformed
         if (popup == false){  
             qValue = 800; 
         }
+        sub.question();
+        q.syncQuestion(sub.question, sub.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        sub800.setEnabled(false);
     }//GEN-LAST:event_sub800ActionPerformed
 
     private void sub1000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub1000ActionPerformed
         if (popup == false){  
             qValue = 1000; 
         }
+        sub.question();
+        q.syncQuestion(sub.question, sub.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        sub1000.setEnabled(false);
     }//GEN-LAST:event_sub1000ActionPerformed
 
     private void div200ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_div200ActionPerformed
@@ -1491,24 +1541,44 @@ public class JeopardyGUI extends javax.swing.JFrame {
         if (popup == false){  
             qValue = 400; 
         }
+        div.question();
+        q.syncQuestion(div.question, div.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        div400.setEnabled(false);
     }//GEN-LAST:event_div400ActionPerformed
 
     private void div600ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_div600ActionPerformed
         if (popup == false){  
             qValue = 600; 
         }
+        div.question();
+        q.syncQuestion(div.question, div.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        div600.setEnabled(false);
     }//GEN-LAST:event_div600ActionPerformed
 
     private void div800ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_div800ActionPerformed
         if (popup == false){  
             qValue = 800; 
         }
+        div.question();
+        q.syncQuestion(div.question, div.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        div800.setEnabled(false);
     }//GEN-LAST:event_div800ActionPerformed
 
     private void div1000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_div1000ActionPerformed
         if (popup == false) {
             qValue = 1000;
         }
+        div.question();
+        q.syncQuestion(div.question, div.answer);
+        jLayeredPane.setLayer(popupFrame, jLayeredPane.POPUP_LAYER);
+        popupStart();
+        div1000.setEnabled(false);
     }//GEN-LAST:event_div1000ActionPerformed
       
     private void gameSetup(){ 
